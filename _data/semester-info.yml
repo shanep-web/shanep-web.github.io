@@ -1,0 +1,56 @@
+break: 14
+start-date: 2022-08-21T12:00:00Z
+start-day: wednesday
+semester: Fall 2022
+textbook: https://learn.zybooks.com/zybook/BOISESTATECS401PanterFall2022
+discussion: https://piazza.com/boisestate/fall2022/cs401/home
+github: https://github.com/shanep-web
+office-hours: https://boisestatecanvas.instructure.com/courses/10423/
+grades: https://boisestatecanvas.instructure.com/courses/10423/grades
+exams: https://boisestatecanvas.instructure.com/courses/10423/quizzes
+example-exams: https://boisestatecanvas.instructure.com/courses/10423/files/folder/example-exams
+learning-objectives: 
+instructor: Shane Panter
+email: shanepanter@boisestate.edu
+text_logo: //CS401
+catalog: >
+   **CS 401 INTRODUCTION TO WEB DEVELOPMENT (3-0-3)(F)**. An introduction to the technologies used for
+   client-side and server-side web development. Learn the fundamentals behind competing web
+   technologies, best practices for design and usability, and build rich, dynamic, n-tier secure web
+   applications. **PREREQ: CS 321.**
+
+coursework:
+  Labs (11 @ 50 points each): 550
+  Reading (10 @ 20 points each): 200
+  Midterm Exam: 100
+  Final Project: 100
+  Final Exam: 100
+
+labs:
+   lesson02: /docs/starter-code.html
+   lesson04: /docs/starter-code.html
+   lesson06: /docs/starter-code.html
+   lesson08: /docs/starter-code.html
+   lesson10: /docs/starter-code.html
+   lesson12: /docs/starter-code.html
+   lesson14: /docs/starter-code.html
+   lesson18: /docs/starter-code.html 
+   lesson20: /docs/starter-code.html 
+   lesson22: /docs/starter-code.html
+   lesson24: /docs/starter-code.html
+   lesson26: /docs/starter-code.html
+   lesson28: /docs/starter-code.html
+   lesson30: /docs/starter-code.html
+
+reading:
+  lesson03: Reading Assignment (ch1)
+  lesson05: Reading Assignment (ch2)
+  lesson07: Reading Assignment (ch3)
+  lesson09: Reading Assignment (ch4)
+  lesson11: Reading Assignment (ch5)
+  lesson13: Reading Assignment (ch6)
+  lesson17: Reading Assignment (ch7)
+  lesson19: Reading Assignment (ch8)
+  lesson21: Reading Assignment (ch9)
+  lesson23: Reading Assignment (ch10)
+  lesson25: Reading Assignment (ch11)

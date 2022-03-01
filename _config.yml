@@ -1,0 +1,26 @@
+title: CS401
+description: Introduction to Web development
+url: "https://shanep-web.github.io"
+
+theme: shanep-class
+twitter_username: shanepanter
+github_username:  shanep
+
+exclude:
+  - run-jekyll.sh
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+collections:
+  lessons:
+    output: true
+  docs:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "course"
