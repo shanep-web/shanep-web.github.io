@@ -59,7 +59,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    shanep-class (1.0.6)
+    shanep-class (1.0.8)
       jekyll (~> 3.9.0)
       jekyll-feed (~> 0.15.1)
       jekyll-seo-tag (~> 2.7.1)
@@ -71,7 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.9.0)
-  shanep-class (= 1.0.6)
+  shanep-class (= 1.0.8)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
