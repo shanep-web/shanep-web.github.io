@@ -43,6 +43,13 @@ necessary to complete the labs.
 
 {% include youtube.html param="https://www.youtube.com/embed/lix7G-S8ox8" %}
 
+## Task 4 - Install Node.js
+
+We will be using Node.js throughout the semester to run our [QUnit](https://qunitjs.com/) tests and
+later in the semester to generate actual websites! So download and install
+[Node.js](https://nodejs.org/en/download/) from the official website so you can get started writing
+some code!
+
 ## Task 4 - Post an Introduction
 
 Go to the class discussion forum and post an introduction with the following information.
