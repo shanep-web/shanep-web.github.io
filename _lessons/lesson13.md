@@ -1,7 +1,7 @@
 ---
 title: JavaScript Fundamentals
 tag: Javascript
-layout: reading-zybooks
+layout: course
 ---
 
 ## Overview

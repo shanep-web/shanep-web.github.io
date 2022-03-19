@@ -1,7 +1,7 @@
 ---
 title: HTML Fundamentals
 tag: html
-layout: reading-zybooks
+layout: course
 ---
 
 ## Overview

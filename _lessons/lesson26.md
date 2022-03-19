@@ -2,5 +2,5 @@
 title: Final Project
 tag: final project
 layout: project
-lessons: [lesson27, lesson28, lesson29, lesson30]
+lessons: [lesson23, lesson24, lesson25, lesson26, lesson27, lesson28]
 ---

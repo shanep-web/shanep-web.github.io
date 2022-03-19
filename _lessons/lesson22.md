@@ -1,5 +1,5 @@
 ---
-title: Basic node site
-tag: databases
+title: Simple Database Interaction
+tag: AWS
 layout: lab
 ---

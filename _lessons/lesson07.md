@@ -1,7 +1,7 @@
 ---
 title: More HTML
 tag: html
-layout: reading-zybooks
+layout: course
 ---
 
 ## Overview

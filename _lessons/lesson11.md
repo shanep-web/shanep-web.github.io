@@ -1,7 +1,7 @@
 ---
 title: More CSS
 tag: css
-layout: reading-zybooks
+layout: course
 ---
 
 ## Overview

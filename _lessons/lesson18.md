@@ -1,5 +1,5 @@
 ---
-title: Image Rotation
-tag: AWS Lambda
+title: Lambda Hello World
+tag: AWS
 layout: lab
 ---

@@ -1,15 +1,18 @@
 ---
-title: JQuery
-tag: AWS Lambda
-layout: reading-zybooks
+title: AWS Interactions
+tag: AWS
+layout: course
 ---
 
-## Overview
+## Overview 
 
-Writing JavaScript that creates dynamic, interactive web pages that work across all browsers can be
-very tedious, often requiring many lines of brittle code. Developers typically rely on libraries to
-ease the burden of writing such code. A library is a collection of functions that focus on a related
-set of tasks. jQuery is a popular JavaScript library that focuses on a broad range of tasks, many of
-them associated with the visual elements of a web page.
+Most websites and web applications require the development of client-side technologies that interact
+with server-side technologies. Client-side (or front-end) refers to those technologies that run in
+the web browser like HTML, CSS, and JavaScript. Server-side (or back-end) refers to those
+technologies that run on the web server like AWS Lambda. There are certain things that you should
+never do on the client side. For example, directly accessing a database (while possible) should
+never be done from the web browser (client side). 
 
-This lesson will introduce you to jQuery one of the most popular javascript libraries in use today!
+Important topics that this module covers:
+
+- Full stack development 

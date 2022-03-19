@@ -1,5 +1,5 @@
 ---
-title: Currency Conversion (JQuery)
-tag: AWS Lambda
+title: Github Pages and AWS
+tag: AWS
 layout: lab
 ---

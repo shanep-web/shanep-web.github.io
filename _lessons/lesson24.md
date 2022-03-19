@@ -1,6 +1,7 @@
 ---
-title: Setting up a basic database
-tag: databases
-layout: lab
+title: Final Project
+tag: final project
+layout: project
+lessons: [lesson23, lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
