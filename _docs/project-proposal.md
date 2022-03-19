@@ -50,3 +50,7 @@ TODO: Define what you will have done.
 ## Checkpoint 5
 
 TODO: Define what you will have done.
+
+## Checkpoint 6
+
+TODO: Define what you will have done.
