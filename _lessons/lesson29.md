@@ -1,6 +1,6 @@
 ---
-title: Final Project
+title: Final Presentation
 tag: final project
-layout: project
-lessons: [lesson27, lesson28, lesson29, lesson30]
+layout: course-notoc
 ---
+

@@ -1,5 +1,5 @@
 ---
 title: JavaScript password strength
-tag: Javascript the language
+tag: Javascript
 layout: lab
 ---

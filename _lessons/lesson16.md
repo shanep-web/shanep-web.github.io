@@ -1,9 +1,5 @@
 ---
-title: Midterm
-tag: midterm
-layout: course-notoc
+title: Javascript Tic-Tac-Toe
+tag: Javascript
+layout: lab
 ---
-
-## Overview
-
-Take the midterm exam! The exam link is on the [course home page]({% link index.html %})

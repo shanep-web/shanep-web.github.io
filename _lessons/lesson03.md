@@ -1,7 +1,7 @@
 ---
-title: Fundamentals
+title: The Internet
 tag: introduction
-layout: reading-zybooks
+layout: course
 ---
 
 ## Overview
@@ -27,3 +27,9 @@ Important topics that this module covers:
 - Introduction to HTML
 - Introduction to CSS
 - Introduction to JavaScript
+
+## Reading 
+
+- [How the Internet
+  Works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+- [How the Web Works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)

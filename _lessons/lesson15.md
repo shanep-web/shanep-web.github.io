@@ -1,11 +1,9 @@
 ---
-title: Midterm Review
-tag: midterm
-layout: course-notoc
+title: More JavaScript
+tag: Javascript
+layout: reading-zybooks
 ---
 
 ## Overview
 
-For this lesson all you need to do is review your work in the previous labs and textbook reading
-assignments and prepare for the midterm. A sample midterm is available on the [course home page]({%
-link index.html %}).
+In this lesson we will continue to learn about Javascript!

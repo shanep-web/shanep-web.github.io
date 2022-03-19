@@ -1,6 +1,6 @@
 ---
 title: JavaScript Fundamentals
-tag: Javascript the language
+tag: Javascript
 layout: reading-zybooks
 ---
 
@@ -39,3 +39,7 @@ Important topics that this module covers:
 - Classes (ES6)
 - Closures
 - Asynchronous JavaScript
+
+## Videos
+
+- [Debugging javascript](https://developer.chrome.com/docs/devtools/javascript/)

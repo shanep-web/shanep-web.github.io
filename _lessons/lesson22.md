@@ -1,5 +1,5 @@
 ---
-title: Currency Conversion (JQuery)
-tag: Javascript in web 
+title: Basic node site
+tag: databases
 layout: lab
 ---

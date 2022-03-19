@@ -1,5 +1,5 @@
 ---
-title: Javascript Tic-Tac-Toe
-tag: Javascript in web 
+title: Image Rotation
+tag: AWS Lambda
 layout: lab
 ---

@@ -1,36 +1,15 @@
 ---
-title: Javascript in the Browser
-tag: Javascript in web 
+title: JQuery
+tag: AWS Lambda
 layout: reading-zybooks
 ---
 
 ## Overview
 
-In this lesson, we will learn how to create dynamic client-side web pages using event-driven
-programming in JavaScript. We will also investigate the basics of the Document Object Model (DOM)
-and how to access and manipulate elements of the DOM using JavaScript.
+Writing JavaScript that creates dynamic, interactive web pages that work across all browsers can be
+very tedious, often requiring many lines of brittle code. Developers typically rely on libraries to
+ease the burden of writing such code. A library is a collection of functions that focus on a related
+set of tasks. jQuery is a popular JavaScript library that focuses on a broad range of tasks, many of
+them associated with the visual elements of a web page.
 
-## Objectives
-
-By the end of this lesson, you will be able to:
-
-- Identify when to use JavaScript to add interactive components to your existing websites.
-- Use JavaScript DOM objects and functions to retrieve and manipulate HTML elements and properties.
-- Use the Chrome Developer Tools and console logging to debug JavaScript in your web pages.
-
-## Why This Module Is Important
-
-In the last module we explored JavaScript the language. In this module we will show how JavaScript
-works in the Browser and introduce a common framework. JavaScript allows web pages to be more
-interactive. JavaScript can execute in response to user interactions and alter the contents of the
-web page. JavaScript is what enables web developers to create truly interactive "apps"!
-
-Important topics this modules covers:
-
-- Using JavaScript with HTML
-- The Document Object Module (DOM)
-- Event driving programming
-- Modifying CSS and HTML with JavaScript
-- JSON
-- Ajax (XMLHttpRequest)
-
+This lesson will introduce you to jQuery one of the most popular javascript libraries in use today!

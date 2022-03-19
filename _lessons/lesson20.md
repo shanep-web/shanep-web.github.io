@@ -1,5 +1,5 @@
 ---
-title: Image Rotation
-tag: Javascript in web 
+title: Currency Conversion (JQuery)
+tag: AWS Lambda
 layout: lab
 ---

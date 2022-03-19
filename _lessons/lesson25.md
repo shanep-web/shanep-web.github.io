@@ -1,9 +1,6 @@
 ---
-title: Relation Databases and SQL
-tag: databases
-layout: reading-zybooks
+title: Final Project
+tag: final project
+layout: project
+lessons: [lesson27, lesson28, lesson29, lesson30]
 ---
-
-## Overview
-
-In this lesson we will introduce you to basic database usage.
