@@ -1,5 +1,5 @@
 ---
-title: Lambda Hello World
-tag: AWS
+title: Node.js hello world
+tag: Full Stack
 layout: lab
 ---

@@ -1,5 +1,5 @@
 ---
-title: Github Pages and AWS
-tag: AWS
+title: Simple Full Stack App
+tag: Full Stack
 layout: lab
 ---

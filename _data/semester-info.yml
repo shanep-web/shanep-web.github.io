@@ -4,7 +4,7 @@ start-day: wednesday
 semester: Fall 2022
 textbook:
 discussion: https://piazza.com/boisestate/fall2022/cs401/home
-github: https://github.com/shanep-web
+github: https://github.com/shanep-web-fall2022
 office-hours: https://boisestatecanvas.instructure.com/courses/10423/
 grades: https://boisestatecanvas.instructure.com/courses/10423/grades
 exams: https://boisestatecanvas.instructure.com/courses/10423/quizzes
@@ -20,11 +20,10 @@ catalog: >
    applications. **PREREQ: CS 321.**
 
 coursework:
-  Labs (11 @ 50 points each): 550
-  Reading (10 @ 20 points each): 200
-  Midterm Exam: 100
-  Final Project: 100
-  Final Exam: 100
+  Labs (10 @ 50 points each): 500
+  Final Project: 200
+  Final Project presentation: 200
+  Final Project Checkpoints: 100
 
 labs:
    lesson02: /docs/starter-code.html
@@ -34,23 +33,8 @@ labs:
    lesson10: /docs/starter-code.html
    lesson12: /docs/starter-code.html
    lesson14: /docs/starter-code.html
+   lesson16: /docs/starter-code.html 
    lesson18: /docs/starter-code.html 
-   lesson20: /docs/starter-code.html 
+   lesson20: /docs/starter-code.html
    lesson22: /docs/starter-code.html
-   lesson24: /docs/starter-code.html
-   lesson26: /docs/starter-code.html
-   lesson28: /docs/starter-code.html
-   lesson30: /docs/starter-code.html
 
-reading:
-  lesson03: Reading Assignment (ch1)
-  lesson05: Reading Assignment (ch2)
-  lesson07: Reading Assignment (ch3)
-  lesson09: Reading Assignment (ch4)
-  lesson11: Reading Assignment (ch5)
-  lesson13: Reading Assignment (ch6)
-  lesson17: Reading Assignment (ch7)
-  lesson19: Reading Assignment (ch8)
-  lesson21: Reading Assignment (ch9)
-  lesson23: Reading Assignment (ch10)
-  lesson25: Reading Assignment (ch11)

@@ -1,6 +1,10 @@
 ---
-title: Final Project
+title: Checkpoint 1
 tag: final project
 layout: project
-lessons: [lesson23, lesson24, lesson25, lesson26, lesson27, lesson28]
+lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
+
+## Overview
+
+Complete the tasks that you defined for checkpoint 1.

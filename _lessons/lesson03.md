@@ -4,6 +4,8 @@ tag: introduction
 layout: course
 ---
 
+![The Internet]({{site.baseurl}}/assets/images/internet.gif)
+
 ## Overview
 
 By the end of this lesson, you will be able to:

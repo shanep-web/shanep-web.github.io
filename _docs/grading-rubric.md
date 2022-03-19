@@ -6,9 +6,7 @@ tags: rubric
 
 ## Overview
 
-This document applies to all coding labs turned in during the semester.
+Due to the variable number of technologies used in this class each lab will have a custom grading
+rubric detailing the point breakdown.
 
-## Point Breakdown
-
-TBD
 

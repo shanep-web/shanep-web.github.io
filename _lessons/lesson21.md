@@ -1,33 +1,25 @@
 ---
-title: Databases
-tag: AWS
+title: Project Brainstorm
+tag: final project
+layout: project
 layout: course
 ---
 
 ## Overview
 
-In this lesson, we will introduce server-side programming.
+You have two options for your final project. You can work on a predefined project or submit your
+own idea for a project.
 
-## Objectives
+- [Option 1]({% link _docs/simple-blog.md %})
+- [Option 2]({% link _docs/project-proposal.md %})
 
-By the end of this module, you will be able to:
+For both options you will need to define your own checkpoints to make sure you keep on track with
+getting everything done.
 
-- Identify when a server-side language such as NodeJS is useful in web development.
-- Use NodeJS templates reduce repetitive HTML and produce dynamic content based on conditionals.
-- Explore functions available in NodeJS and use them to implement server-side logic.
+## Project Ideas
 
-## Why This lesson Is Important
+Can't think of anything to build? Check out the [google graveyard](https://killedbygoogle.com/) has
+(at the time of this writing) 205 killed projects. Keep in mind that google thinks in billions;
+billions of users, billions of dollars, and billions of servers! So a lot of these projects were
+killed not because they were bad ideas or not successful, they were just not in the billions.
 
-Most websites and web applications require the development of client-side technologies that interact
-with server-side technologies. Client-side (or front-end) refers to those technologies that run in
-the web browser like HTML, CSS, and JavaScript. Server-side (or back-end) refers to those
-technologies that run on the web server like NodeJS. There are certain things that you should never
-do on the client side. For example, accessing a database (while possible) should never be done from
-the web browser. 
-
-Important topics that this module covers:
-
-- Full stack development 
-- Nodejs fundamentals (conditionals, loops, arrays, etc.)
-- Common functions such as date/time and math
-- Cookies and sessions
