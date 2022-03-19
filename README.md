@@ -1,3 +1,3 @@
-# CS221 - Computer Science 2
+# Web Dev
 
 [Course Webpage](https://shanep-web.github.io/)
