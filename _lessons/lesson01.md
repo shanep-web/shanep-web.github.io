@@ -50,13 +50,13 @@ later in the semester to generate actual websites! So download and install
 [Node.js](https://nodejs.org/en/download/) from the official website so you can get started writing
 some code!
 
-## Task 4 - Post an Introduction
+## Task 5 - Post an Introduction
 
-Go to the class discussion forum and post an introduction with the following information.
-
-**Hint:** The discussion form is linked on the [home page]({% link index.html %})
+Go to the [class discussion forum]({{site.data.semester-info.discussion}}) and post an introduction
+with the following information.
 
 - Name
 - Do you have any experience with Web Development?
-- Did you run into any issues when installing VSCode or Git?
+  - If so what technologies have you used?
+- What do you hope to get out of this class?
 - (optional) Share one cool fact about yourself :)

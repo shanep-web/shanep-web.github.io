@@ -1,5 +1,5 @@
 ---
-title: Simple Full Stack App
+title: Full Stack App
 tag: Full Stack
 layout: lab
 ---

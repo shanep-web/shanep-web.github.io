@@ -2,13 +2,10 @@ break: 14
 start-date: 2022-08-21T12:00:00Z
 start-day: wednesday
 semester: Fall 2022
-textbook:
 discussion: https://piazza.com/boisestate/fall2022/cs401/home
 github: https://github.com/shanep-web-fall2022
 office-hours: https://boisestatecanvas.instructure.com/courses/10423/
 grades: https://boisestatecanvas.instructure.com/courses/10423/grades
-exams: https://boisestatecanvas.instructure.com/courses/10423/quizzes
-example-exams: https://boisestatecanvas.instructure.com/courses/10423/files/folder/example-exams
 learning-objectives: 
 instructor: Shane Panter
 email: shanepanter@boisestate.edu
@@ -21,9 +18,9 @@ catalog: >
 
 coursework:
   Labs (10 @ 60 points each): 600
-  Final Project: 200
+  Final Project: 250
   Final Project presentation: 100
-  Final Project Checkpoints: 100
+  Check-in Meetings: 50
 
 labs:
    lesson02: /docs/starter-code.html

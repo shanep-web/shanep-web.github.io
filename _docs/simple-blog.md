@@ -5,6 +5,10 @@ date: 2022-03-19
 tags: final-project
 ---
 
+**NOTE:** This is document not complete! If you select this option for you final project still need 
+to fill out each section with MORE detail than is given. Each section should be at least 150 - 200
+words in length.
+
 ## Overview
 
 For this option you are going to write a simple blogging engine. Your version will need to support
