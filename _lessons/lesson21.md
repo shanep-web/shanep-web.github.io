@@ -27,11 +27,3 @@ Can't think of anything to build? Check out the [google graveyard](https://kille
 (at the time of this writing) 205 killed projects. Keep in mind that google thinks in billions;
 billions of users, billions of dollars, and billions of servers! So a lot of these projects were
 killed not because they were bad ideas or not successful, they were just not in the billions.
-
-## Task 1 - Schedule office hour visits
-
-You are required to have two zoom meetings with your instructor during the course of the project. We
-will review the progress that you have made and answer any questions. These meetings are part of
-your grade and are **not optional**. Schedule your meeting
-[here]({{site.data.semester-info.office-hours}}). If none of the available time slots fit your
-schedule you need to email your instructor to work out an alternative time.

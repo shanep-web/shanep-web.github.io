@@ -9,18 +9,25 @@ grades: https://boisestatecanvas.instructure.com/courses/10423/grades
 learning-objectives: 
 instructor: Shane Panter
 email: shanepanter@boisestate.edu
-text_logo: //CS401
+text-logo: //CS401
 catalog: >
-   **CS 401 INTRODUCTION TO WEB DEVELOPMENT (3-0-3)(F)**. An introduction to the technologies used for
+   CS 401 INTRODUCTION TO WEB DEVELOPMENT (3-0-3)(F). An introduction to the technologies used for
    client-side and server-side web development. Learn the fundamentals behind competing web
    technologies, best practices for design and usability, and build rich, dynamic, n-tier secure web
-   applications. **PREREQ: CS 321.**
+   applications. PREREQ: CS 321.
 
-coursework:
-  Labs (10 @ 60 points each): 600
-  Final Project: 250
-  Final Project presentation: 100
-  Check-in Meetings: 50
+welcome-message: >
+   Welcome to the class! My name is Shane Panter and I will be your instructor for this course. For
+   many students this will be the first time you have been exposed to web development 
+   topics. This course has been designed to take someone who has never seen these concepts before to
+   being able to produce relatively complex programs in 16 weeks. This class is a three credit
+   course and it is specifically designed to require 8 to 10 hours of work each week. In order to
+   succeed in the course, it will be critical for you to manage your time effectively and keep up
+   with the reading and lab activities.  Please take some time to get familiar with the course
+   website. Pay close attention to when the homework assignments are due to ensure you get
+   everything in on time. <br><br> We will be interacting with each other primarily through github,
+   discussion forums, and videos. Get started by completing the Course Introduction homework below!
+welcome-video: https://www.youtube.com/embed/eKt21AEnlBE
 
 labs:
    lesson02: /docs/starter-code.html
@@ -35,3 +42,14 @@ labs:
    lesson20: /docs/starter-code.html
    lesson22: /docs/starter-code.html
 
+reading:
+  lesson03: Reading Homework (ch1)
+  lesson05: Reading Homework (ch2.1-2.4)
+  lesson07: Reading Homework (ch2.5-2.11)
+  lesson09: Reading Homework (ch3)
+  lesson11: Reading Homework (ch4)
+  lesson13: Reading Homework (ch5)
+  lesson17: Reading Homework (ch6.1-6.3)
+  lesson19: Reading Homework (ch6.4-6.6)
+  lesson21: Reading Homework (ch7.4-7.4)
+  lesson23: Reading Homework (ch7.5-7.9)

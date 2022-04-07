@@ -2,12 +2,10 @@
 title: "Course Introduction"
 date: 2022-01-10
 tag: introduction
-layout: course-notoc
+layout: course
 ---
 
 ## Overview
-
-{% include youtube.html param="https://www.youtube.com/embed/eKt21AEnlBE" %}
 
 In this course, we will explore how websites work, their structure, and how information is
 communicated across the Internet. Web development consists of a lot of different technologies that
@@ -21,42 +19,14 @@ learn any framework that you may need.
 The picture shown on the course homepage is from a cool [MIT
 project](https://arts.mit.edu/reverberations-spiders-and-musical-webs/)!
 
-## Task 1 - Review and explore
+## Task 2 - Textbook
 
-For this task all you need to do is read the [syllabus]({% link _docs/syllabus.md %}) and 
-explore the site. Click through all the links and see if you can find anything that is missing
-or broken! You can get extra credit for any typo you find on the course website.
+We will be using an online textbook for this class, the textbook has integrated homework that you
+will need to complete each week. Sign up for the [textbook]({{site.data.semester-info.textbook}})
+so you can get started on the first homework.
 
-## Task 2 - Install Git
 
-You will also need to install git so it is available on the command line if necessary. Git can be
-download from [git-scm.com](http://git-scm.com/). If you are on windows make sure and install the
-**64-bit Git for Windows Setup** version. Keep all the setting default unless you **really** know
-what your doing.
+## Task 3 - First Lab
 
-## Task 3 - Install VSCode
-
-While you are free to use whatever IDE or editor you want the only supported editor is VSCode. You
-will need to install the [coding pack for
-Java](https://code.visualstudio.com/learn/educators/installers) which will give you all the tools
-necessary to complete the labs.
-
-{% include youtube.html param="https://www.youtube.com/embed/lix7G-S8ox8" %}
-
-## Task 4 - Install Node.js
-
-We will be using Node.js throughout the semester to run our [QUnit](https://qunitjs.com/) tests and
-later in the semester to generate actual websites! So download and install
-[Node.js](https://nodejs.org/en/download/) from the official website so you can get started writing
-some code!
-
-## Task 5 - Post an Introduction
-
-Go to the [class discussion forum]({{site.data.semester-info.discussion}}) and post an introduction
-with the following information.
-
-- Name
-- Do you have any experience with Web Development?
-  - If so what technologies have you used?
-- What do you hope to get out of this class?
-- (optional) Share one cool fact about yourself :)
+Once you are done with that head over to [lesson02]({% link _lessons/lesson02.md %}) and get started
+on the scavenger hunt!

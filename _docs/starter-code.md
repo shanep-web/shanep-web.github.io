@@ -1,8 +1,8 @@
 ---
 title: Starter Code Place Holder
-layout: course-notoc
+layout: course
 date: 2022-02-28
-tags: geocities
+hide: true
 ---
 
 This is a place holder page for the github assignment. If you are seeing this it means the lab is
