@@ -1,10 +1,8 @@
 ---
-title: Checkpoint 4
+title: Checkpoint 4 - New/Edit/Update Features
 tag: final project
 layout: project
-lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
-## Overview
-
-Complete the tasks that you defined for checkpoint 4.
+At this checkpoint our app will allow you to create a new blog post and edit and update existing
+blog posts.

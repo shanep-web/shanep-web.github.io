@@ -1,10 +1,7 @@
 ---
-title: Checkpoint 5
+title: Checkpoint 6 - Final UI Polish
 tag: final project
 layout: project
-lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
-## Overview
-
-Complete the tasks that you defined for checkpoint 5.
+At this checkpoint we will do end to end testing and front end UI polishing.

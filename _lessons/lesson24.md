@@ -1,10 +1,7 @@
 ---
-title: Checkpoint 2
+title: Checkpoint 2 - Define basic templates
 tag: final project
 layout: project
-lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
-## Overview
-
-Complete the tasks that you defined for checkpoint 2.
+On this checkpoint we will have our base templates defined and hard coded data to display them.

@@ -1,29 +1,47 @@
 ---
-title: Project Brainstorm
+title: Final Website
 tag: final project
 layout: project
-layout: course
 ---
 
 ## Overview
 
-In this lesson we will define what your final project will look like.
+You are going to write a simple blogging engine. Your blog will need to support the following
+features:
+
+- A home page that will display all the current blog entries
+- A page that allows a user to create a new blog entry
+- A page that allows a user to edit an existing blog entry
+- A page method to delete blog posts
+- You will need 4 separate pages (Home, new, edit, delete)
+- Store your blog entries in a database
+- (optional) Implement authentication
+
+## Navigation
+
+Each page will have consistent navigation. It will have a be vertical navigation bar similar to how
+the course webpage is setup. This should make it easy for the user to know where they are. 
+
+## Style
+
+We are going to write our own style sheet that will have at least 10 CSS rules to make our site
+look fancy!  
+
+## Persistence
+
+We will leverage the free Heroku Postgres Starter Tier dev database for our app.
+
+## Frameworks
+
+This project will not use any front end frameworks, everything will be built from scratch.
 
 
-## Task 1 - Select your project
 
-You have two options for your final project. You can work on a predefined project or submit your
-own idea for a project.
 
-- [Option 1]({% link _docs/simple-blog.md %}) - Simple Blogging Engine
-- [Option 2]({% link _docs/project-proposal.md %}) - Define your own project
 
-For both options you will need flush out each section with enough detail to construct your site. 
-The examples given to you are not complete! 
 
-### Project Ideas
 
-Can't think of anything to build? Check out the [google graveyard](https://killedbygoogle.com/) has
-(at the time of this writing) 205 killed projects. Keep in mind that google thinks in billions;
-billions of users, billions of dollars, and billions of servers! So a lot of these projects were
-killed not because they were bad ideas or not successful, they were just not in the billions.
+
+
+
+

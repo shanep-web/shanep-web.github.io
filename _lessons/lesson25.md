@@ -1,10 +1,8 @@
 ---
-title: Checkpoint 3
+title: Checkpoint 3 - Define database schema 
 tag: final project
 layout: project
-lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
-## Overview
-
-Complete the tasks that you defined for checkpoint 3.
+At this checkpoint our app will display a list of 5 blog posts (readonly) that are just hard coded
+into the app.

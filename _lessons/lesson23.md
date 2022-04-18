@@ -1,10 +1,8 @@
 ---
-title: Checkpoint 1
+title: Checkpoint 1 - Continuous Integration
 tag: final project
 layout: project
-lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
-## Overview
-
-Complete the tasks that you defined for checkpoint 1.
+We will setup a [Github Action](https://github.com/features/actions) to build, test, and deploy
+the code to Heroku on each commit. 

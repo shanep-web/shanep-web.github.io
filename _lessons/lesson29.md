@@ -1,7 +1,7 @@
 ---
 title: Project Presentation
 tag: final project
-layout: course
+layout: project
 ---
 
 ## Overview

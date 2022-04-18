@@ -1,10 +1,8 @@
 ---
-title: Checkpoint 6
+title: Checkpoint 7 - Live Testing
 tag: final project
 layout: project
-lessons: [lesson24, lesson25, lesson26, lesson27, lesson28]
 ---
 
-## Overview
-
-Complete the tasks that you defined for checkpoint 6.
+In this checkpoint you will be testing your live site to make sure everything still works when
+running in a production environment.
