@@ -1,5 +1,6 @@
 ---
 title: Javascript Tic-Tac-Toe
-tag: Javascript
+tag: javascript
 layout: lab
+points: 50
 ---

@@ -41,15 +41,17 @@ labs:
    lesson18: /docs/starter-code.html 
    lesson20: /docs/starter-code.html
    lesson22: /docs/starter-code.html
+   lesson23: /docs/starter-code.html
+   lesson30: /docs/starter-code.html
 
 reading:
   lesson03: Reading Homework (ch1)
-  lesson05: Reading Homework (ch2.1-2.4)
-  lesson07: Reading Homework (ch2.5-2.11)
-  lesson09: Reading Homework (ch3)
-  lesson11: Reading Homework (ch4)
-  lesson13: Reading Homework (ch5)
-  lesson17: Reading Homework (ch6.1-6.3)
-  lesson19: Reading Homework (ch6.4-6.6)
-  lesson21: Reading Homework (ch7.4-7.4)
-  lesson23: Reading Homework (ch7.5-7.9)
+  lesson05: Reading Homework (ch2)
+  lesson07: Reading Homework (ch3)
+  lesson09: Reading Homework (ch4)
+  lesson11: Reading Homework (ch5)
+  lesson13: Reading Homework (ch6)
+  lesson15: Reading Homework (ch7)
+  lesson17: Reading Homework (ch8)
+  lesson19: Reading Homework (ch9)
+  lesson21: Reading Homework (ch10)

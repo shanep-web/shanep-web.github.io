@@ -1,5 +1,6 @@
 ---
-title: Full Stack App
+title: NodeJS Introduction
 tag: Full Stack
 layout: lab
+points: 50
 ---

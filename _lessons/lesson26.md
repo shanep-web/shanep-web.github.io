@@ -1,5 +1,5 @@
 ---
-title: Checkpoint 4 - New/Edit/Update Features
+title: Checkpoint 3 - New/Edit/Update Features
 tag: final project
 layout: project
 ---

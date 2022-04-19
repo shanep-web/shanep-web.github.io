@@ -1,7 +1,8 @@
 ---
 title: The Internet
 tag: introduction
-layout: course
+layout: reading-zybooks
+points: 20
 ---
 
 ![The Internet]({{site.baseurl}}/assets/images/internet.gif)
@@ -30,7 +31,7 @@ Important topics that this module covers:
 - Introduction to CSS
 - Introduction to JavaScript
 
-## Reading 
+## Additional Reading 
 
 - [How the Internet
   Works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)

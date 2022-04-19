@@ -1,8 +1,7 @@
 ---
-title: Checkpoint 3 - Define database schema 
+title: Checkpoint 2 - Define database schema 
 tag: final project
 layout: project
 ---
 
-At this checkpoint our app will display a list of 5 blog posts (readonly) that are just hard coded
-into the app.
+At this checkpoint we will need to define a database schema to hold our blog entries.

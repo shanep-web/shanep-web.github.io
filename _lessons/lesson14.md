@@ -1,5 +1,6 @@
 ---
 title: JavaScript password strength
-tag: Javascript
+tag: javascript
 layout: lab
+points: 50
 ---

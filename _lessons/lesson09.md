@@ -1,7 +1,8 @@
 ---
 title: CSS Fundamentals
 tag: css
-layout: course
+layout: reading-zybooks
+points: 20
 ---
 
 ## Overview

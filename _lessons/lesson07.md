@@ -1,7 +1,8 @@
 ---
 title: More HTML
 tag: html
-layout: course
+layout: reading-zybooks
+points: 20
 ---
 
 ## Overview

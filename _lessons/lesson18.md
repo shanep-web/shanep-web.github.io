@@ -1,5 +1,6 @@
 ---
-title: Node.js hello world
-tag: Full Stack
+title: Advanced Javascript
+tag: javascript
 layout: lab
+points: 50
 ---

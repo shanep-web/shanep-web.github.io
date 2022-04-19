@@ -1,15 +1,13 @@
 ---
-title: Project Presentation
-tag: final project
-layout: project
+title: Semester Review and Evaluations
+tag: final
+layout: course
+points: (20)
 ---
 
-## Overview
+## Task 1 - Complete the Student Evaluation
 
-It is time to show off your final website to the class. We are going to use flipgrid to show off
-your site. Here are instructions on how you can [record your
-screen](https://help.flipgrid.com/hc/en-us/articles/360045940833-Screen-Recording-How-to-record-your-screen-using-the-Flipgrid-camera).
+Complete the [student evaluations]({{site.data.semester-info.student-evals}}). Once you complete
+the evaluation email you instructor and I will add {{page.points}} to your final score!! 
 
-## Show the completed UI.
-
-Walk the viewer through your code and talk about how you structured your back end code
+The evaluation should take no more than 5 minutes and your feedback is greatly appreciated!

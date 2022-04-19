@@ -1,5 +1,5 @@
 ---
-title: Checkpoint 6 - Final UI Polish
+title: Checkpoint 4 - Final UI Polish
 tag: final project
 layout: project
 ---

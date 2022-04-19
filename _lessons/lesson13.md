@@ -1,7 +1,8 @@
 ---
 title: JavaScript Fundamentals
-tag: Javascript
-layout: course
+tag: javascript
+layout: reading-zybooks
+points: 20
 ---
 
 ## Overview
