@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.9.0"
-gem "shanep-class", "1.0.30"
+gem "shanep-class", "1.0.31"
 
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem and associated library.
