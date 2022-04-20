@@ -9,14 +9,6 @@ points: 20
 
 In this lesson, we will introduce the JavaScript programming language. 
 
-## Objectives
-
-By the end of this lesson, you will be able to:
-
-- Identify the differences between JavaScript and and more traditional Object Oriented language like Java or C#
-- Explore how to use Javascript in an asynchronous manner
-- Construct simple JavaScript programs that will run in the browser
-
 ## Why This Module Is Important
 
 JavaScript is one of the most [popular programming

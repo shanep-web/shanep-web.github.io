@@ -9,13 +9,6 @@ points: 20
 
 In this lesson, we will investigate website structure and introduce basic HTML elements. 
 
-## Objectives
-
-By the end of this lesson, you will be able to:
-
-- Use web developer tools to inspect existing web pages and network traffic.
-- Identify basic HTML tags and attributes and use them to create a static web page.
-
 ## Why This Lesson Is Important
 
 Hyper Text Markup Language (HTML) is a fundamental building block of the web. When HTML was first

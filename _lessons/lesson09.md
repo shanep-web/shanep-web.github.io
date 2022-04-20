@@ -9,14 +9,6 @@ points: 20
 
 In this lesson, we will learn how to style our websites using Cascading Style Sheets (CSS).
 
-## Objectives
-
-By the end of this module, you will be able to:
-
-- Use CSS to style HTML elements.
-- Apply styles using id and class attributes.
-- Use CSS selectors to select specific HTML elements for styling.
-
 ## Why This Module Is Important
 
 CSS (Cascading Style Sheets) is a textual language for describing how a web page is styled for
