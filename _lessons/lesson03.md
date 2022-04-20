@@ -9,11 +9,9 @@ points: 20
 
 ## Overview
 
-By the end of this lesson, you will be able to:
+In this lesson we will discuss how the Internet works at a high level and how data is shared over
+the World Wide Web (WWW).
 
-- Discuss how the Internet works at a high level and how data is shared over the World Wide Web (WWW).
-- Explain the roles of a client and a server in the client-server communication model.
-- Use web developer tools to inspect existing web pages and network traffic.
 
 ## Why This Lesson is Important
 
