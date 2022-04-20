@@ -28,7 +28,7 @@ welcome-message: >
    website. Pay close attention to when the homework assignments are due to ensure you get
    everything in on time. <br><br> We will be interacting with each other primarily through github,
    discussion forums, and videos. Get started by completing the Course Introduction homework below!
-welcome-video: https://www.youtube.com/embed/eKt21AEnlBE
+welcome-video: https://www.youtube.com/embed/UkLlL65EyHg
 
 labs:
    lesson02: /docs/starter-code.html
