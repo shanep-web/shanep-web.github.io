@@ -1,30 +1,34 @@
 break: 14
 start-date: 2022-08-21T12:00:00Z
 start-day: wednesday
-semester: Spring 2022
-textbook: https://learn.zybooks.com/zybook/BOISESTATECS401PanterSpring2022
-discussion: https://boisestatecanvas.instructure.com/courses/10422
-github: https://github.com/shanep-web
-office-hours: https://boisestatecanvas.instructure.com/courses/10422
-grades: https://boisestatecanvas.instructure.com/courses/10422/grades
-exams: https://boisestatecanvas.instructure.com/courses/10422/quizzes
-example-exams: https://boisestatecanvas.instructure.com/courses/10422/files/folder/example-exams
-learning-objectives: 
+semester: Fall 2022
+discussion: https://piazza.com/boisestate/fall2022/cs401/home
+github: https://github.com/cs401-fall2022
+office-hours: https://boisestatecanvas.instructure.com/courses/14640
+grades: https://boisestatecanvas.instructure.com/courses/14640/grades
+textbook: https://learn.zybooks.com/zybook/BOISESTATECS401516PanterFall2022
+learning-objectives: https://docs.google.com/spreadsheets/d/1XZJ_oXxTwgnL0vkrBdRjkDB50WlsOPhKUcu-gsZb25o/edit?usp=sharing
 instructor: Shane Panter
 email: shanepanter@boisestate.edu
-text_logo: //CS401
+text-logo: //CS401
 catalog: >
-   **CS 401 INTRODUCTION TO WEB DEVELOPMENT (3-0-3)(F)**. An introduction to the technologies used for
+   CS 401 INTRODUCTION TO WEB DEVELOPMENT (3-0-3)(F). An introduction to the technologies used for
    client-side and server-side web development. Learn the fundamentals behind competing web
    technologies, best practices for design and usability, and build rich, dynamic, n-tier secure web
-   applications. **PREREQ: CS 321.**
+   applications. PREREQ: CS 321.
 
-coursework:
-  Labs (11 @ 50 points each): 550
-  Reading (10 @ 20 points each): 200
-  Midterm Exam: 100
-  Final Project: 100
-  Final Exam: 100
+welcome-message: >
+   Welcome to the class! My name is Shane Panter and I will be your instructor for this course. For
+   many students this will be the first time you have been exposed to web development 
+   topics. This course has been designed to take someone who has never seen these concepts before to
+   being able to produce relatively complex programs in 16 weeks. This class is a three credit
+   course and it is specifically designed to require 8 to 10 hours of work each week. In order to
+   succeed in the course, it will be critical for you to manage your time effectively and keep up
+   with the reading and lab activities.  Please take some time to get familiar with the course
+   website. Pay close attention to when the homework assignments are due to ensure you get
+   everything in on time. <br><br> We will be interacting with each other primarily through github,
+   discussion forums, and videos. Get started by completing the Course Introduction homework below!
+welcome-video: https://www.youtube.com/embed/UkLlL65EyHg
 
 labs:
    lesson02: /docs/starter-code.html
@@ -34,23 +38,21 @@ labs:
    lesson10: /docs/starter-code.html
    lesson12: /docs/starter-code.html
    lesson14: /docs/starter-code.html
+   lesson16: /docs/starter-code.html 
    lesson18: /docs/starter-code.html 
-   lesson20: /docs/starter-code.html 
+   lesson20: /docs/starter-code.html
    lesson22: /docs/starter-code.html
-   lesson24: /docs/starter-code.html
-   lesson26: /docs/starter-code.html
-   lesson28: /docs/starter-code.html
+   lesson23: /docs/starter-code.html
    lesson30: /docs/starter-code.html
 
 reading:
-  lesson03: Reading Assignment (ch1)
-  lesson05: Reading Assignment (ch2)
-  lesson07: Reading Assignment (ch3)
-  lesson09: Reading Assignment (ch4)
-  lesson11: Reading Assignment (ch5)
-  lesson13: Reading Assignment (ch6)
-  lesson17: Reading Assignment (ch7)
-  lesson19: Reading Assignment (ch8)
-  lesson21: Reading Assignment (ch9)
-  lesson23: Reading Assignment (ch10)
-  lesson25: Reading Assignment (ch11)
+  lesson03: Reading Homework (ch1)
+  lesson05: Reading Homework (ch2)
+  lesson07: Reading Homework (ch3)
+  lesson09: Reading Homework (ch4)
+  lesson11: Reading Homework (ch5)
+  lesson13: Reading Homework (ch6)
+  lesson15: Reading Homework (ch7)
+  lesson17: Reading Homework (ch8)
+  lesson19: Reading Homework (ch9)
+  lesson21: Reading Homework (ch10)
