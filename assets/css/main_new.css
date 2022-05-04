@@ -930,6 +930,15 @@ a.skip-main:focus, a.skip-main:active {
   padding-left: 20px;
   margin: 0; }
 
+.small-text {
+  font-size: var(--s-1); }
+
+.med-text {
+  font-size: var(--s0); }
+
+.no-dec {
+  text-decoration: none; }
+
 .asciinema-player-wrapper {
   position: relative;
   text-align: center;
