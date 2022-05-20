@@ -3,9 +3,8 @@ title: The Internet
 tag: introduction
 layout: reading-zybooks
 points: 20
+video: oXoZqO37OYE
 ---
-
-![The Internet]({{site.baseurl}}/assets/images/internet.gif)
 
 ## Overview
 
