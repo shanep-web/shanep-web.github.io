@@ -1,5 +1,5 @@
 ---
-title: Bonus Lab (Extra Credit)!
+title: Make up Lab (optional)
 tag: final
 layout: lab
 ---
