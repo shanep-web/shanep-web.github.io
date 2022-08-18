@@ -17,8 +17,6 @@ will be considered obsolete in a few years. This class doesn't teach frameworks,
 the fundamentals that are used to build everything else. If you understand the fundamentals you can
 learn any framework that you may need.
 
-The picture shown on the course homepage is from a cool [MIT
-project](https://arts.mit.edu/reverberations-spiders-and-musical-webs/)!
 
 ## Task 1 - Review and explore
 
