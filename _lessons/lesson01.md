@@ -17,13 +17,12 @@ will be considered obsolete in a few years. This class doesn't teach frameworks,
 the fundamentals that are used to build everything else. If you understand the fundamentals you can
 learn any framework that you may need.
 
-
 ## Task 1 - Review and explore
 
 For this task all you need to do is explore the site. Click through all the links and see if you can
 find anything that is missing or broken! You can get extra credit for any typo you find on the
 course website. Read all the class policies to make sure you are familiar with what is expected of
-you during the semester. 
+you during the semester.
 
 ## Task 2 - Textbook
 
