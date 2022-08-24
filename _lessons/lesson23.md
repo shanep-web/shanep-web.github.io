@@ -2,7 +2,7 @@
 title: Final Website (Full Stack)
 tag: final project
 layout: project
-points: 300
+points: 200
 ---
 
 ## Overview

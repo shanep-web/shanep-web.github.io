@@ -2,6 +2,7 @@
 title: Project Presentation
 tag: final project
 layout: project
+points: 100
 ---
 
 ## Overview
