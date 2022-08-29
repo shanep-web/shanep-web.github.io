@@ -1,5 +1,5 @@
 ---
-title: "Class coding Standards"
+title: "Class Coding Standards"
 date: 2022-01-20
 tags: coding standards
 layout: course
@@ -8,17 +8,17 @@ layout: course
 ## Overview
 
 This document applies to all coding labs turned in during the semester. You are expected to follow
-these standards for all the code that you submit. 
+these standards for all the code that you submit.
 
-## Compiling and running code
+## Compiling and Running Code
 
-Unless otherwise stated all code must compile and run on the department's computers in the [Kount
+Unless otherwise stated, all code must compile and run on the department's computers in the [Kount
 Computer Lab (CCP241)](https://cs481.boisestate.edu/ccp-tour/index.html). It doesn't matter if your
 code compiles on your machine, it must compile on the computers provided in CCP241. If your program
-fails to compile it will be awarded 0 points. Absolutely no partial credit will be given if your
+fails to compile, it will be awarded 0 points. Absolutely no partial credit will be given if your
 program does not compile.
 
-You can access the lab computers remotely via ssh or you can go to the lab and use a work station
+You can access the lab computers remotely via ssh or you can go to the lab and use a workstation
 directly.
 
 ## Spelling and Grammar

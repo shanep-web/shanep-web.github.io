@@ -17,16 +17,16 @@ will be considered obsolete in a few years. This class doesn't teach frameworks,
 the fundamentals that are used to build everything else. If you understand the fundamentals you can
 learn any framework that you may need.
 
-## Task 1 - Review and explore
+## Task 1 - Review and Explore
 
-For this task all you need to do is explore the site. Click through all the links and see if you can
+For this task, all you need to do is explore the site. Click through all the links and see if you can
 find anything that is missing or broken! You can get extra credit for any typo you find on the
 course website. Read all the class policies to make sure you are familiar with what is expected of
 you during the semester.
 
 ## Task 2 - Textbook
 
-We will be using an online textbook for this class, the textbook has integrated homework that you
+We will be using an online textbook for this class. The textbook has integrated homework that you
 will need to complete each week. Sign up for the [textbook]({{site.data.semester-info.textbook}})
 so you can get started on the first homework.
 
