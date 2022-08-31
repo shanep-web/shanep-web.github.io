@@ -16,11 +16,11 @@ invented it was very simple. However, the modern web has added a lot of complexi
 For example, the current HTML living standard pdf is (as of 2021) 1298 pages long! Compare that to
 the current (as of 2021) C++ standard pdf at 1448 pages long. C++ is a turning complete programming
 language and HTML is only a markup language. Even if you have extensive experience in HTML take some
-time to dive deep into the standard because there is always something you can learn :) 
+time to dive deep into the standard because there is always something you can learn :)
 
-# Important topics that this module covers:
+## Important topics that this module covers
 
-- Document Structure 
+- Document Structure
 - Fundamental HTML Tags
 - Containers
 - Forms
