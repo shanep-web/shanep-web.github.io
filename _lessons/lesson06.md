@@ -106,7 +106,7 @@ QUnit.test('Test 3rd section list', function(assert) {
 
 ## Task 3 - Flipgrid (10pts)
 
-Show off your website to the class. Once you have everything ready create a video using flipgrid!
+Show off your website to the class. Once you have everything ready create a video using Flipgrid!
 
 - [How to record your screen](https://help.flip.com/hc/en-us/articles/360045940833-Screen-Recording-How-to-record-your-screen-using-the-Flipgrid-camera)
 - [Flipgrid topic]({{site.data.semester-info.flip[page.slug]}})

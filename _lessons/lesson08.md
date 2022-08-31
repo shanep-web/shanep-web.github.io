@@ -23,7 +23,7 @@ a social network. The web page uses CSS to align the form widgets vertically.
 The form should:
 
 - Use the POST method and the "multipart/form-data" enctype
-- Submit to https://wp.zybooks.com/form-viewer.php
+- Submit to `https://wp.zybooks.com/form-viewer.php`
 - Use a `<label>` for each form field and the label text shown in the image above
 - Use a `<div>` to surround each label and form widget and a `<div>` around the submit button
 - Use a text `<input>` with name and id "fullName" to get the user's name

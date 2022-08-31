@@ -58,7 +58,7 @@ Hello World
 
 ## Task 4 - Scavenger hunt
 
-Open the file **ScavengerHunt.md** and complete all the TODO items that are listed. 
+Open the file **ScavengerHunt.md** and complete all the TODO items that are listed.
 
 ## Task 5 - Add, Commit, Push your code
 
