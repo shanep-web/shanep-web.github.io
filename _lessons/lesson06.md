@@ -46,7 +46,7 @@ QUnit.test('Test page title', function(assert) {
 });
 
 QUnit.test('Test h1 heading', function(assert) {
-    assert.equal(document.getElementsByTagName('h1').length, 1, 'One <h1> tag exists');
+    assert.equal(document.getElementsByTagName('h1').length, 2, 'One <h1> tag exists');
     assert.ok(document.querySelectorAll('body > h1:first-child').length !== 0, '<h1> is first tag in <body>');
     assert.ok(document.getElementsByTagName('h1')[0].innerText.length >= 1, '<h1> tag contains text');
 });
