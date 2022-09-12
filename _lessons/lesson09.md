@@ -22,9 +22,8 @@ Important topics that this module covers:
 - CSS in HTML
 - Basic and Advanced selectors
 - Font and text properties
-- The Box model 
-- Flexbox 
+- The Box model
+- Flexbox
 - Grid layout
 - Positioning elements
 - Special effects and Animation
-
