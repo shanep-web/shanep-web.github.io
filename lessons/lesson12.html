@@ -8,17 +8,17 @@
 <meta name="generator" content="Jekyll v3.9.1" />
 <meta property="og:title" content="Lab 5 (ch5)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Introduction to Web development" />
-<meta property="og:description" content="Introduction to Web development" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
 <link rel="canonical" href="https://shanep-web.github.io/lessons/lesson12.html" />
 <meta property="og:url" content="https://shanep-web.github.io/lessons/lesson12.html" />
 <meta property="og:site_name" content="CS401" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-09-01T13:31:25-05:00" />
+<meta property="article:published_time" content="2022-09-12T16:46:53-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Lab 5 (ch5)" />
 <script type="application/ld+json">
-{"headline":"Lab 5 (ch5)","dateModified":"2022-09-01T13:31:25-05:00","datePublished":"2022-09-01T13:31:25-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson12.html"},"url":"https://shanep-web.github.io/lessons/lesson12.html","@type":"BlogPosting","description":"Introduction to Web development","@context":"https://schema.org"}</script>
+{"headline":"Lab 5 (ch5)","dateModified":"2022-09-12T16:46:53-05:00","datePublished":"2022-09-12T16:46:53-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson12.html"},"url":"https://shanep-web.github.io/lessons/lesson12.html","@type":"BlogPosting","description":"Overview","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://shanep-web.github.io/feed.xml" title="CS401" /><link rel="stylesheet" href="https://shanep-web.github.io/assets/css/main_new.css" />
 
@@ -67,7 +67,7 @@
 
 
     <h2 id="Toc">Contents</h2>
-    <ul><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
+    <ul><li><a href="#overview">Overview</a></li><li><a href="#videos">Videos</a></li><li><a href="#task-1---write-css-25pts">Task 1 - Write CSS (25pts)</a></li><li><a href="#task-2---unit-testing-10pts">Task 2 - Unit testing (10pts)</a></li><li><a href="#task-3---flipgrid-10pts">Task 3 - Flipgrid (10pts)</a></li><li><a href="#task-4---complete-the-retrospective-5pts">Task 4 - Complete the Retrospective (5pts)</a></li><li><a href="#task-5---add-commit-push-your-code">Task 5 - Add, Commit, Push your code</a></li><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
 
 </div>
 
@@ -78,7 +78,273 @@
             <h1>Lab 5 (ch5)</h1>
         
         
-        <h2 id="github-classroom">
+        <h2 id="overview">
+        
+        
+          Overview <a href="#overview">#</a>
+        
+        
+      </h2>
+    
+
+<p>In this lab you are going to practice more CSS!</p>
+      <h2 id="videos">
+        
+        
+          Videos <a href="#videos">#</a>
+        
+        
+      </h2>
+    
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=lix7G-S8ox8">VSCode and Git Installed</a></li>
+  <li><a href="https://shanep-web.github.io/docs/coding-standards.html">Class Coding standards</a></li>
+  <li><a href="https://shanep-web.github.io/docs/github.html">Cloning and Submitting</a></li>
+</ul>
+      <h2 id="task-1---write-css-25pts">
+        
+        
+          Task 1 - Write CSS (25pts) <a href="#task-1---write-css-25pts">#</a>
+        
+        
+      </h2>
+    
+
+<p>Use CSS to format the web page so it looks exactly like the screenshot below:</p>
+
+<p><img src="../assets/images/labs/lab5.png" alt="Image of the page you will create" /></p>
+
+<ul>
+  <li>Use a <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> for each of the 4 verse containers and the outer container.</li>
+  <li>The title “Yesterday” uses an <code class="language-plaintext highlighter-rouge">&lt;h2&gt;</code> tag with a 16pt Arial font that is blue and italicized. Do not use an <code class="language-plaintext highlighter-rouge">&lt;i&gt;</code> tag.</li>
+  <li>The entire song is embedded in a container that is 600 x 280 pixels, has a two
+pixel solid blue border, and a five pixel padding. The background color is
+#F0F0F0.</li>
+  <li>The outer <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>’s first child is the <code class="language-plaintext highlighter-rouge">&lt;h2&gt;</code>. The 4 child <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>s follow, declared in the order listed below.</li>
+  <li>The yellow section:
+    <ul>
+      <li>has a background color of “yellow”</li>
+      <li>floats to the left</li>
+      <li>has a 200 pixel width</li>
+      <li>has a 10 pixel padding</li>
+      <li>has a right margin of 10 pixels, with all other margins set to 0</li>
+    </ul>
+  </li>
+  <li>The section with no background color has no CSS styling.</li>
+  <li>The orange section:
+    <ul>
+      <li>has a background color of “orange”</li>
+      <li>is positioned at (110px, 200px) with absolute positioning</li>
+      <li>has a 200 pixel width</li>
+      <li>has a 10 pixel padding</li>
+    </ul>
+  </li>
+  <li>The orange-red section:
+    <ul>
+      <li>has a background color of “rgb(255, 80, 0)”</li>
+      <li>has white text</li>
+      <li>floats to the right</li>
+      <li>has a 200 pixel width</li>
+      <li>has a 10 pixel padding</li>
+      <li>has a right margin of 40 pixels, a top margin of 20 pixels, and all other margins set to 0</li>
+    </ul>
+  </li>
+  <li>Do not use <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> anywhere in your HTML.</li>
+</ul>
+      <h2 id="task-2---unit-testing-10pts">
+        
+        
+          Task 2 - Unit testing (10pts) <a href="#task-2---unit-testing-10pts">#</a>
+        
+        
+      </h2>
+    
+
+<p>Copy the tests below into your testing file and run all the tests. 100% of the tests must pass!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">Main &lt;div&gt; has proper styles and no &lt;br&gt; tags are used</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">allDIVs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">allDIVs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">At least 1 &lt;div&gt; exists on the page</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">mainDIV</span> <span class="o">=</span> <span class="nx">allDIVs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">mainDIVStyle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">mainDIV</span><span class="p">);</span>
+
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">mainDIVStyle</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(240, 240, 240)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Outer container has correct background color</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Left</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Top</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Right</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bottom</span><span class="dl">"</span><span class="p">];</span>
+    <span class="nx">sides</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">side</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">prefix</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">border</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">side</span><span class="p">;</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">mainDIVStyle</span><span class="p">[</span><span class="nx">prefix</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">Style</span><span class="dl">"</span><span class="p">],</span> <span class="dl">"</span><span class="s2">solid</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">Outer container has solid border</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">mainDIVStyle</span><span class="p">[</span><span class="nx">prefix</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">Width</span><span class="dl">"</span><span class="p">],</span> <span class="dl">"</span><span class="s2">2px</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">Outer container has border width of 2 pixels</span><span class="dl">"</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">clr</span> <span class="o">=</span> <span class="nx">mainDIVStyle</span><span class="p">[</span><span class="nx">prefix</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">Color</span><span class="dl">"</span><span class="p">];</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">clr</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(0, 0, 255)</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">Outer container has blue border</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">mainDIVStyle</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="dl">"</span><span class="s2">600px</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Outer container has width of 600 pixels</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">mainDIVStyle</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span> <span class="dl">"</span><span class="s2">280px</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Outer container has height of 280 pixels</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">sides</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">side</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">mainDIVStyle</span><span class="p">[</span><span class="dl">"</span><span class="s2">padding</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">side</span><span class="p">],</span> <span class="dl">"</span><span class="s2">5px</span><span class="dl">"</span><span class="p">,</span>
+            <span class="s2">`Outer container has </span><span class="p">${</span><span class="nx">side</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()}</span><span class="s2"> padding of 5 pixels`</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">Main &lt;div&gt; contains &lt;h2&gt; with proper styles</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">allDIVs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">allDIVs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">At least 1 &lt;div&gt; exists on the page</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">mainDIV</span> <span class="o">=</span> <span class="nx">allDIVs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">childH2s</span> <span class="o">=</span> <span class="nx">mainDIV</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">h2</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">childH2s</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Main &lt;div&gt; contains a single &lt;h2&gt;</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">theStyle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">childH2s</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">color</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(0, 0, 255)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">&lt;h2&gt; has correct font color</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">fontStyle</span><span class="p">,</span> <span class="dl">"</span><span class="s2">italic</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">&lt;h2&gt; has italic font style</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">Yellow &lt;div&gt; has proper styles</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">allDIVs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">allDIVs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">At least 1 &lt;div&gt; exists on the page</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">yellowDIV</span> <span class="o">=</span> <span class="nx">allDIVs</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="kd">const</span> <span class="nx">expectedText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Yesterday, All those backups seemed a waste of pay. </span><span class="dl">"</span> <span class="o">+</span> 
+        <span class="dl">"</span><span class="s2">Now my database has gone away. Oh I believe in yesterday.</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">yellowDIV</span><span class="p">.</span><span class="nx">innerText</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Yellow container contains expected verse text</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">theStyle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">yellowDIV</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(255, 255, 0)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Yellow container has correct background color</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Left</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Top</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Right</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bottom</span><span class="dl">"</span><span class="p">];</span>
+    <span class="nx">sides</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">side</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">[</span><span class="dl">"</span><span class="s2">padding</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">side</span><span class="p">],</span> <span class="dl">"</span><span class="s2">10px</span><span class="dl">"</span><span class="p">,</span>
+            <span class="s2">`Yellow container has 10 pixel </span><span class="p">${</span><span class="nx">side</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()}</span><span class="s2"> padding`</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">float</span><span class="p">,</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Yellow container floats to the left</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="dl">"</span><span class="s2">200px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Yellow container has 200 pixel width</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginRight</span><span class="p">,</span> <span class="dl">"</span><span class="s2">10px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Yellow container has 10 pixel right margin</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginLeft</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Yellow container has 0 pixel left margin</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginTop</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Yellow container has 0 pixel top margin</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginBottom</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Yellow container has 0 pixel bottom margin</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">No-color &lt;div&gt; has proper styles</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">allDIVs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">allDIVs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">At least 1 &lt;div&gt; exists on the page</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">theDIV</span> <span class="o">=</span> <span class="nx">allDIVs</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">expectedText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Suddenly, There's not half the files there used to be, And there's a </span><span class="dl">"</span> <span class="o">+</span> 
+        <span class="dl">"</span><span class="s2">milestone hanging over me. The system crashed so suddenly. I pushed something wrong, </span><span class="dl">"</span> <span class="o">+</span> 
+        <span class="dl">"</span><span class="s2">What it was I could not say.</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theDIV</span><span class="p">.</span><span class="nx">innerText</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">No-color container contains expected verse text</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">theStyle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">theDIV</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgba(0, 0, 0, 0)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">No-color container has correct background color</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">float</span><span class="p">,</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">No-color container has default float style</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">Orange &lt;div&gt; has proper styles</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">allDIVs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">allDIVs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">At least 1 &lt;div&gt; exists on the page</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">orangeDIV</span> <span class="o">=</span> <span class="nx">allDIVs</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">expectedText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Now all my data's gone and I long for yesterday-ay-ay-ay.</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">orangeDIV</span><span class="p">.</span><span class="nx">innerText</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Orange container contains expected verse text</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">theStyle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">orangeDIV</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(255, 165, 0)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Orange container has correct background color</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">position</span><span class="p">,</span> <span class="dl">"</span><span class="s2">absolute</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange container uses absolute positioning</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="dl">"</span><span class="s2">110px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange container's left position is 110 pixels</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">top</span><span class="p">,</span> <span class="dl">"</span><span class="s2">200px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange container's top position is 200 pixels</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">float</span><span class="p">,</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange container has default float (none)</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="dl">"</span><span class="s2">200px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange container has 200 pixel width</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Left</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Top</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Right</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bottom</span><span class="dl">"</span><span class="p">];</span>
+    <span class="nx">sides</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">side</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">[</span><span class="dl">"</span><span class="s2">padding</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">side</span><span class="p">],</span> <span class="dl">"</span><span class="s2">10px</span><span class="dl">"</span><span class="p">,</span>
+            <span class="s2">`Orange container has 10 pixel </span><span class="p">${</span><span class="nx">side</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()}</span><span class="s2"> padding`</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">Orange-red &lt;div&gt; has proper styles</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">allDIVs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">allDIVs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">At least 1 &lt;div&gt; exists on the page</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">orDIV</span> <span class="o">=</span> <span class="nx">allDIVs</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">expectedText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Yesterday, The need for back-ups seemed so far away. I knew </span><span class="dl">"</span> <span class="o">+</span> 
+        <span class="dl">"</span><span class="s2">my data was all here to stay, Now I believe in yesterday.</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">orDIV</span><span class="p">.</span><span class="nx">innerText</span><span class="p">,</span> <span class="nx">expectedText</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Orange-red container contains expected verse text</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">theStyle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">orDIV</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(255, 80, 0)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Orange-red container has correct background color</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">color</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rgb(255, 255, 255)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Orange-red container has correct text color</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">float</span><span class="p">,</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange-red container floats right</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="dl">"</span><span class="s2">200px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange-red container has 200 pixel width</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Left</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Top</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Right</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bottom</span><span class="dl">"</span><span class="p">];</span>
+    <span class="nx">sides</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">side</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">[</span><span class="dl">"</span><span class="s2">padding</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">side</span><span class="p">],</span> <span class="dl">"</span><span class="s2">10px</span><span class="dl">"</span><span class="p">,</span>
+            <span class="s2">`Orange-red container has 10 pixel </span><span class="p">${</span><span class="nx">side</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()}</span><span class="s2"> padding`</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginRight</span><span class="p">,</span> <span class="dl">"</span><span class="s2">40px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange-red container has 40 pixel right margin</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginLeft</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange-red container has 0 pixel left margin</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginTop</span><span class="p">,</span> <span class="dl">"</span><span class="s2">20px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange-red container has 20 pixel top margin</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">theStyle</span><span class="p">.</span><span class="nx">marginBottom</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0px</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Orange-red container has 0 pixel bottom margin</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+      <h2 id="task-3---flipgrid-10pts">
+        
+        
+          Task 3 - Flipgrid (10pts) <a href="#task-3---flipgrid-10pts">#</a>
+        
+        
+      </h2>
+    
+
+<p>Show off your website to the class. Once you have everything ready create a video using flipgrid!</p>
+
+<ul>
+  <li><a href="https://help.flip.com/hc/en-us/articles/360045940833-Screen-Recording-How-to-record-your-screen-using-the-Flipgrid-camera">How to record your screen</a></li>
+  <li><a href="https://flip.com/48b1885c">Flipgrid topic</a></li>
+</ul>
+
+<p>You need to demo the following:</p>
+
+<ul>
+  <li>Show the completed page(s).</li>
+  <li>Show your unit tests passing</li>
+</ul>
+      <h2 id="task-4---complete-the-retrospective-5pts">
+        
+        
+          Task 4 - Complete the Retrospective (5pts) <a href="#task-4---complete-the-retrospective-5pts">#</a>
+        
+        
+      </h2>
+    
+
+<p>Once you have completed all the tasks open the file <strong>Retrospective.md</strong> and complete each section with a TODO comment.</p>
+      <h2 id="task-5---add-commit-push-your-code">
+        
+        
+          Task 5 - Add, Commit, Push your code <a href="#task-5---add-commit-push-your-code">#</a>
+        
+        
+      </h2>
+    
+
+<p>Once you are finished you need to make sure that you have pushed all your code to GitHub for grading!</p>
+      <h2 id="github-classroom">
         
         
           Github Classroom <a href="#github-classroom">#</a>
@@ -103,7 +369,7 @@
     
 
 <ul>
-    <li>Get the <a href="/docs/starter-code.html">Starter Code</a></li>
+    <li>Get the <a href="https://classroom.github.com/a/nGer0pao">Starter Code</a></li>
     <li>When you accept the assignment it is critical that you select your student email
         address from the list. If you don't select your student email address your instructor will not be
         able to grade your code. If you can't find your email in the list, contact your instructor ASAP to
@@ -132,7 +398,7 @@
     <div class="contact">
         <ul>
             <li>
-                 2022-09-01 | layout: lab</li>
+                 2022-09-12 | layout: lab</li>
             <li>contact: shanepanter@boisestate.edu</li>
             <li>theme: <a href="https://github.com/shanep/shanep-class">shanep-class</a></li>       
             
