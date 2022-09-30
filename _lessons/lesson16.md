@@ -1,5 +1,5 @@
 ---
-title: Lab 6 (ch6) - Typescript part 2
+title: Lab 7 - Typescript part 2
 tag: javascript
 layout: project
 points: (10%)

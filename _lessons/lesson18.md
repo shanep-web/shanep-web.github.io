@@ -1,5 +1,5 @@
 ---
-title: Lab 8 (ch8) - Typescript Tutorial
+title: Lab 8 - Typescript Tutorial
 tag: javascript
 layout: project
 points: 150
