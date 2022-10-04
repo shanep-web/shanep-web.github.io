@@ -8,17 +8,17 @@
 <meta name="generator" content="Jekyll v3.9.2" />
 <meta property="og:title" content="Lab 9 (ch9)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Introduction to Web development" />
-<meta property="og:description" content="Introduction to Web development" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
 <link rel="canonical" href="https://shanep-web.github.io/lessons/lesson20.html" />
 <meta property="og:url" content="https://shanep-web.github.io/lessons/lesson20.html" />
 <meta property="og:site_name" content="CS401" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-09-30T14:42:34-05:00" />
+<meta property="article:published_time" content="2022-10-03T19:43:11-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Lab 9 (ch9)" />
 <script type="application/ld+json">
-{"url":"https://shanep-web.github.io/lessons/lesson20.html","headline":"Lab 9 (ch9)","dateModified":"2022-09-30T14:42:34-05:00","datePublished":"2022-09-30T14:42:34-05:00","description":"Introduction to Web development","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson20.html"},"@context":"https://schema.org"}</script>
+{"url":"https://shanep-web.github.io/lessons/lesson20.html","headline":"Lab 9 (ch9)","dateModified":"2022-10-03T19:43:11-05:00","datePublished":"2022-10-03T19:43:11-05:00","description":"Overview","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson20.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://shanep-web.github.io/feed.xml" title="CS401" /><link rel="stylesheet" href="https://shanep-web.github.io/assets/css/main_new.css" />
 
@@ -67,7 +67,7 @@
 
 
     <h2 id="Toc">Contents</h2>
-    <ul><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
+    <ul><li><a href="#overview">Overview</a></li><li><a href="#task-1---aws-signup">Task 1 - AWS Signup</a></li><li><a href="#task-2---hello-world">Task 2 - Hello World</a><ul><li><a href="#invoke-the-lambda-function">Invoke the Lambda function</a></li></ul></li><li><a href="#task-3---add-a-function-url">Task 3 - Add a Function URL</a><ul><li><a href="#to-create-a-function-url-for-an-existing-function-console">To create a function URL for an existing function (console)</a></li></ul></li><li><a href="#task-4---invoke-function-from-your-localhost">Task 4 - Invoke Function from your localhost</a></li><li><a href="#it-didnt-work">It didn’t work</a><ul><li><a href="#delete-your-function">Delete your Function</a></li><li><a href="#delete-your-logs">Delete your Logs</a></li></ul></li><li><a href="#deliverables">Deliverables</a></li><li><a href="#project-information">Project information</a></li><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
 
 </div>
 
@@ -78,7 +78,380 @@
             <h1>Lab 9 (ch9)</h1>
         
         
-        <h2 id="github-classroom">
+        <h2 id="overview">
+        
+        
+          Overview <a href="#overview">#</a>
+        
+        
+      </h2>
+    
+
+<p>We are going to live on the bleeding edge and learn how to use a serverless
+architecture.
+<a href="https://www.cloudflare.com/learning/serverless/what-is-serverless">Serverless</a>
+is just a marketing term that means you the developer will be using someone
+else’s server to run your code. Currently there are two big players in the
+serverless market <a href="https://en.wikipedia.org/wiki/Amazon_Web_Services">AWS</a> and
+<a href="https://en.wikipedia.org/wiki/Microsoft_Azure">Azure</a>. We will be using AWS
+because it is currently the biggest player in the market and has pretty killer
+documentation to help us get started.</p>
+      <h2 id="task-1---aws-signup">
+        
+        
+          Task 1 - AWS Signup <a href="#task-1---aws-signup">#</a>
+        
+        
+      </h2>
+    
+
+<p>The department has created an AWS account for you with your BSU student email.
+You don’t have to pay any money or sign up with your personal account. You
+should have received an email similar to what you see below with your AWS
+credentials and a link to the <a href="https://bsucompsci.signin.aws.amazon.com/console">sign in
+page</a>. If you encounter any
+issues with logging in with your student email please email your instructor
+ASAP!</p>
+
+<p><img src="/assets/images/labs/lesson20-email.png" alt="AWS email" /></p>
+
+<p>When you sign in the sign in screen should look similar to what is shown below.</p>
+
+<p><img src="/assets/images/labs/lesson20.png" alt="AWS sign in screen" /></p>
+      <h2 id="task-2---hello-world">
+        
+        
+          Task 2 - Hello World <a href="#task-2---hello-world">#</a>
+        
+        
+      </h2>
+    
+
+<p>In this task, you will create a Lambda function using the console. The Lambda
+console provides a <a href="https://github.com/awsdocs/aws-lambda-developer-guide/blob/main/doc_source/foundation-console.md#code-editor">code
+editor</a>
+for non-compiled languages that lets you modify and test code quickly.</p>
+
+<ol>
+  <li>Open the <a href="https://console.aws.amazon.com/lambda/home#/functions">Functions page</a> of the Lambda console</li>
+  <li>Choose <strong>Create function</strong></li>
+  <li>Under <strong>Basic information</strong>, do the following:
+    <ul>
+      <li>For <strong>Function name</strong>, enter <strong>my-function</strong>.</li>
+      <li>For <strong>Runtime</strong>, confirm that <strong>Node.js 16.x</strong> is selected.</li>
+      <li>Keep all other setting in their default state</li>
+    </ul>
+  </li>
+  <li>Choose <strong>Create function</strong>.</li>
+</ol>
+
+<p>Lambda creates a Node.js function and an execution role that grants the function
+permission to upload logs. The Lambda function assumes the execution role when
+you invoke your function, and uses the execution role to create credentials for
+the AWS SDK and to read data from event sources.</p>
+
+<p>Update the function in the console to the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">key1</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">key2</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value2</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">key3</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value3</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">statusCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+      <h3 id="invoke-the-lambda-function">
+        
+        
+          Invoke the Lambda function <a href="#invoke-the-lambda-function">#</a>
+        
+        
+      </h3>
+    
+
+<p>Invoke your Lambda function using the sample event data provided in the console.</p>
+
+<ol>
+  <li>After selecting your function, choose the <strong>Test</strong> tab.</li>
+  <li>In the <strong>Test event</strong> section, choose <strong>New event</strong>. In <strong>Template</strong>, leave
+the default <strong>hello-world</strong> option. Enter a <strong>Name</strong> for this test and note
+the following sample event template:
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"key1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"key2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"key3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value3"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>Choose <strong>Save changes</strong>, and then choose <strong>Test</strong>. Each user can create up to
+10 test events per function. Those test events are not available to other
+users. Lambda runs your function on your behalf. The function handler
+receives and then processes the sample event.</li>
+  <li>Upon successful completion, view the results in the console.</li>
+  <li>Run the function (choose <strong>Test</strong>) a few more times to gather some metrics
+that you can view in the next step.</li>
+  <li>Choose the <strong>Monitor</strong> tab. This page shows graphs for the metrics that
+Lambda sends to CloudWatch.</li>
+</ol>
+
+<p><img src="http://docs.aws.amazon.com/lambda/latest/dg/images/metrics-functions-list.png" alt="[Image NOT FOUND]" /></p>
+      <h2 id="task-3---add-a-function-url">
+        
+        
+          Task 3 - Add a Function URL <a href="#task-3---add-a-function-url">#</a>
+        
+        
+      </h2>
+    
+
+<p>A function URL is a dedicated HTTP(S) endpoint for your Lambda function. You can
+create and configure a function URL through the Lambda console or the Lambda
+API. When you create a function URL, Lambda automatically generates a unique URL
+endpoint for you. Once you create a function URL, its URL endpoint never
+changes. Function URL endpoints have the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">https://&lt;url-id&gt;.lambda-url.&lt;region&gt;.on.aws</code></p>
+
+<p>Function URLs are dual stack-enabled, supporting IPv4 and IPv6. After you
+configure a function URL for your function, you can invoke your function through
+its HTTP(S) endpoint via a web browser, curl, Postman, or any HTTP client.
+Lambda function URLs use resource-based policies for security and access
+control. Function URLs also support cross-origin resource sharing (CORS)
+configuration options.</p>
+
+<p>You can apply function URLs to any function alias, or to the $LATEST unpublished
+function version. You can’t add a function URL to any other function version.</p>
+      <h3 id="to-create-a-function-url-for-an-existing-function-console">
+        
+        
+          To create a function URL for an existing function (console) <a href="#to-create-a-function-url-for-an-existing-function-console">#</a>
+        
+        
+      </h3>
+    
+
+<ol>
+  <li>Open the <a href="https://console.aws.amazon.com/lambda/home#/functions">Functions page</a> of the Lambda console.</li>
+  <li>Choose the name of the function that you want to create the function URL for.</li>
+  <li>Choose the <strong>Configuration</strong> tab, and then choose <strong>Function URL</strong>.</li>
+  <li>Choose <strong>Create function URL</strong></li>
+  <li>For <strong>Auth type</strong>, choose  <strong>NONE</strong>.</li>
+</ol>
+
+<p>For our simple hello world we are not going to worry about authentication at
+this point, we can add it later if necessary. At this point your AWS console
+should look like the following:</p>
+
+<p><img src="/assets/images/labs/lesson20-aws.png" alt="AWS console" /></p>
+      <h2 id="task-4---invoke-function-from-your-localhost">
+        
+        
+          Task 4 - Invoke Function from your localhost <a href="#task-4---invoke-function-from-your-localhost">#</a>
+        
+        
+      </h2>
+    
+
+<p>In this task you will load the JSON object that your labmda function is sending
+and display it in a web page. Create an <code class="language-plaintext highlighter-rouge">index.html</code> page with the following
+content:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Test AWS Lambda<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Get Information<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"lambda-info"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- loaded with AJAX --&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"load-data"</span><span class="nt">&gt;</span>Load Data<span class="nt">&lt;/button&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">load-data</span><span class="dl">"</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">lambda</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">lambda-info</span><span class="dl">"</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">lambda</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
+            <span class="p">});</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">YOUR LAMBDA URL HERE!</span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+        <span class="p">}</span>
+
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>You now should be able to load data from your AWS Lambda function when using
+the live server preview in VSCode. This will NOT work if you just open up the
+file in your browser, you <strong>MUST</strong> use the live preview as shown below!</p>
+
+<p><img src="/assets/images/labs/lesson20-load.gif" alt="AWS Load" /></p>
+      <h2 id="it-didnt-work">
+        
+        
+          It didn’t work <a href="#it-didnt-work">#</a>
+        
+        
+      </h2>
+    
+
+<p>If you have completed everything and your code doesn’t work you may have missed
+a step. At this point instead of trying to figure out what when wrong it is
+easier to just start over from scratch. If you got everything working you don’t
+need to delete anything unless you want to. Everything will be automatically
+deleted at the end of the semester 😊. You may want to keep all the work you
+have done an use it for your final project.</p>
+      <h3 id="delete-your-function">
+        
+        
+          Delete your Function <a href="#delete-your-function">#</a>
+        
+        
+      </h3>
+    
+
+<p>If you are done working with the example function, delete it. You can also
+delete the log group that stores the function’s logs, and the execution role
+that the console created.</p>
+
+<ol>
+  <li>Open the <a href="https://console.aws.amazon.com/lambda/home#/functions">Functions page</a> of the Lambda console.</li>
+  <li>Choose a function.</li>
+  <li>Choose <strong>Actions</strong>, <strong>Delete</strong>.</li>
+  <li>In the <strong>Delete function</strong> dialog box, choose <strong>Delete</strong>.</li>
+</ol>
+      <h3 id="delete-your-logs">
+        
+        
+          Delete your Logs <a href="#delete-your-logs">#</a>
+        
+        
+      </h3>
+    
+
+<ol>
+  <li>Open the <a href="https://console.aws.amazon.com/cloudwatch/home#logs:">Log groups page</a> of the CloudWatch console.</li>
+  <li>Select the function’s log group <code class="language-plaintext highlighter-rouge">/aws/lambda/my-function</code>.</li>
+  <li>Choose <strong>Actions</strong>, <strong>Delete log group(s)</strong>.</li>
+  <li>In the <strong>Delete log group(s)</strong> dialog box, choose <strong>Delete</strong>.</li>
+</ol>
+      <h2 id="deliverables">
+        
+        
+          Deliverables <a href="#deliverables">#</a>
+        
+        
+      </h2>
+    
+
+<p>For this lab you need to check in the completed index.html file that you
+created that has the AWS lambda function URL updated.</p>
+      <h2 id="project-information">
+        
+        
+          Project information <a href="#project-information">#</a>
+        
+        
+      </h2>
+    
+
+<p>This is a multistage project consisting of the following lessons:</p>
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href=/lessons/lesson19.html>Node.js</a></li>
+
+
+
+<li><a href=/lessons/lesson20.html>Lab 9 (ch9)</a></li>
+
+
+
+<li><a href=/lessons/lesson21.html>Relational Databases and SQL</a></li>
+
+
+
+<li><a href=/lessons/lesson22.html>Lab 10 (ch10)</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<p>
+   Your code will be <strong>randomly</strong> spot checked at several points during this project.
+   You are expected to have made progress each week. 10% of your grade will be based on completion
+   of the checkpoints on time. The spot checks are pass/fail, no partial credit will be given. 
+</p>
+      <h2 id="github-classroom">
         
         
           Github Classroom <a href="#github-classroom">#</a>
@@ -105,34 +478,24 @@
 <ul>
     <li>Get the <a href="/docs/starter-code.html">Starter Code</a></li>
     <li>When you accept the assignment it is critical that you select your student email
-        address from the list. If you don't select your student email address your instructor will not be
-        able to grade your code. If you can't find your email in the list, contact your instructor ASAP to
+        address from the list. If you don’t select your student email address your instructor will not be
+        able to grade your code. If you can’t find your email in the list, contact your instructor ASAP to
         get the issue resolved.
     </li>
     <li>
-        Make sure to save the GitHub URL so you can find your assignment later if needed!
+        Make sure and save the github URL so you can find your assignment later if needed!
     </li>
     <li>
         Once you accept the assignment it should show up in the class 
         <a href="https://github.com/cs401-fall2022">GitHub account</a>
     </li>
 </ul>
-
-<div style="text-align: center;">
-<iframe width="560" height="315"
-        src="https://www.youtube.com/embed/U1vCFZmtYUA"
-        title="YouTubevideo player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
-</div>
     </article>
     <footer class="footer">
     <div class="contact">
         <ul>
             <li>
-                 2022-09-30 | layout: lab</li>
+                 2022-10-03 | layout: project</li>
             <li>contact: shanepanter@boisestate.edu</li>
             <li>theme: <a href="https://github.com/shanep/shanep-class">shanep-class</a></li>       
             
