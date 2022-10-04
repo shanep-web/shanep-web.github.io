@@ -61,5 +61,7 @@ and idea on where to go next!
 
 ## Deliverables
 
-A rough draft tutorial published on GitHub Pages. You will be working on this
-during the next two labs so it doesn't have to be 100% camera ready.
+A rough outline of what you will have in your tutorial published on GitHub
+Pages. You will be working on this during the next two labs so it doesn't have
+to be complete. All you have to have done this week is your GitHub page
+generating and a rough outline of what you plan on doing.

@@ -41,4 +41,5 @@ need to be for the frontend, meaning it will run in the browser.
 
 ## Deliverables
 
-At the end of this lab you should have completed your starter project template.
+At the end of this lab you should have completed your starter project template
+and made some progress on your tutorial.
