@@ -1,8 +1,8 @@
 ---
 title: Lab 10 (ch10)
 tag: Full Stack
-layout: project
-points: 100
+layout: lab
+points: 50
 ---
 
 ## Overview

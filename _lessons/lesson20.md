@@ -1,8 +1,8 @@
 ---
-title: Lab 9 (ch9)
+title: Lab 9 - AWS Lambda
 tag: Full Stack
-layout: project
-points: (10%)
+layout: lab
+points: 50
 ---
 
 ## Overview
@@ -208,7 +208,23 @@ that the console created.
 3. Choose **Actions**, **Delete log group\(s\)**.
 4. In the **Delete log group\(s\)** dialog box, choose **Delete**.
 
-## Deliverables
+## Deliverables (35pts)
 
 For this lab you need to check in the completed index.html file that you
 created that has the AWS lambda function URL updated.
+
+## Task 5 - Flipgrid (10pts)
+
+Show off your website to the class. Once you have everything ready create a video using flipgrid!
+
+- [How to record your screen](https://help.flip.com/hc/en-us/articles/360045940833-Screen-Recording-How-to-record-your-screen-using-the-Flipgrid-camera)
+- [Flipgrid topic]({{site.data.semester-info.flip[page.slug]}})
+
+You need to demo the following:
+
+- Show the completed page that you built
+- Show your completed Lambda function on AWS
+
+## Task 6 - Complete the Retrospective (5pts)
+
+Once you have completed all the tasks open the file **Retrospective.md** and complete each section with a TODO comment.
