@@ -53,7 +53,8 @@ permission to upload logs. The Lambda function assumes the execution role when
 you invoke your function, and uses the execution role to create credentials for
 the AWS SDK and to read data from event sources.
 
-Update the function in the console to the following:
+In the **Code source** section update code listed in **index.js** to what is
+shown below and make sure and deploy the changes.
 
 ```javascript
 const data = {
@@ -71,32 +72,30 @@ exports.handler = async (event) => {
 };
 ```
 
-### Invoke the Lambda function
+![Deploy changes]({% link assets/images/labs/lesson20-deploy.png%})
 
-Invoke your Lambda function using the sample event data provided in the console.
+### Test the Lambda function
+
+You can test  your Lambda function using the sample event data provided in the
+console. This can allow you to quickly verify that everything is working before
+you proceed any further.
 
 1. After selecting your function, choose the **Test** tab.
-2. In the **Test event** section, choose **New event**. In **Template**, leave
-   the default **hello-world** option. Enter a **Name** for this test and note
-   the following sample event template:
-   ```json
-   {
-      "key1": "value1",
-      "key2": "value2",
-      "key3": "value3"
-   }
-   ```
-3. Choose **Save changes**, and then choose **Test**. Each user can create up to
-   10 test events per function. Those test events are not available to other
-   users. Lambda runs your function on your behalf. The function handler
-   receives and then processes the sample event.
-4. Upon successful completion, view the results in the console.
-5. Run the function (choose **Test**) a few more times to gather some metrics
-   that you can view in the next step.
-6. Choose the **Monitor** tab. This page shows graphs for the metrics that
-   Lambda sends to CloudWatch.
-  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/lambda/latest/dg/images/metrics-functions-list.png)
+2. In the **Configure test event** section, choose **Create new event**.
+3. Give your event a name in the **Even name** field. This can be whatever you
+   want.
+4. In **Template**, leave the default **hello-world** option and then save your
+   changes.
+
+![Test event]({% link assets/images/labs/lesson20-test.png %})
+
+1. Choose **Test**. Each user can create up to 10 test events per function.
+   Those test events are not available to other users. Lambda runs your function
+   on your behalf. The function handler receives and then processes the sample
+   event.
+2. Upon successful completion, view the results in the console.
+
+![Test event]({% link assets/images/labs/lesson20-test.png %})
 
 ## Task 3 - Add a Function URL
 
@@ -125,16 +124,22 @@ function version. You can't add a function URL to any other function version.
 3. Choose the **Configuration** tab, and then choose **Function URL**.
 4. Choose **Create function URL**
 5. For **Auth type**, choose  **NONE**.
+6. Check the box to allow **Configure cross-origin resource sharing (CORS)**
+
+![Test event]({% link assets/images/labs/lesson20-url.png %})
 
 For our simple hello world we are not going to worry about authentication at
-this point, we can add it later if necessary. At this point your AWS console
-should look like the following:
+this point, we can add it later if necessary.
+
+![Test event]({% link assets/images/labs/lesson20-auth-type.png %})
+
+At this point your AWS console should look like the following:
 
 ![AWS console]({% link /assets/images/labs/lesson20-aws.png %})
 
 ## Task 4 - Invoke Function from your localhost
 
-In this task you will load the JSON object that your labmda function is sending
+In this task you will load the JSON object that your Lambda function is sending
 and display it in a web page. Create an `index.html` page with the following
 content:
 
@@ -184,11 +189,8 @@ file in your browser, you **MUST** use the live preview as shown below!
 ## It didn't work
 
 If you have completed everything and your code doesn't work you may have missed
-a step. At this point instead of trying to figure out what when wrong it is
-easier to just start over from scratch. If you got everything working you don't
-need to delete anything unless you want to. Everything will be automatically
-deleted at the end of the semester 😊. You may want to keep all the work you
-have done an use it for your final project.
+a step. At this point instead of trying to figure out what went wrong it is
+easier to just start over from scratch.
 
 ### Delete your Function
 
@@ -222,8 +224,8 @@ Show off your website to the class. Once you have everything ready create a vide
 
 You need to demo the following:
 
-- Show the completed page that you built
 - Show your completed Lambda function on AWS
+- Show your simple web page that invokes the function
 
 ## Task 6 - Complete the Retrospective (5pts)
 
