@@ -33,20 +33,25 @@ When you sign in the sign in screen should look similar to what is shown below.
 
 ![AWS sign in screen]({% link /assets/images/labs/lesson20.png %})
 
-## Task 2 - Hello World
+## Task 2 - Lambda Console
 
 In this task, you will create a Lambda function using the console. The Lambda
 console provides a [code
 editor](https://github.com/awsdocs/aws-lambda-developer-guide/blob/main/doc_source/foundation-console.md#code-editor)
-for non-compiled languages that lets you modify and test code quickly. 
+for non-compiled languages that lets you modify and test code quickly. We will
+start off by using the console and then will switch to using the command line
+interface (CLI) for more complex functions.
 
 1. Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda console
-2. Choose **Create function**
-3. Under **Basic information**, do the following:
+2. Switch to the US West (Oregon) data center
+3. Choose **Create function**
+4. Under **Basic information**, do the following:
    - For **Function name**, enter **my-function**.
    - For **Runtime**, confirm that **Node.js 16.x** is selected.
    - Keep all other setting in their default state
-4. Choose **Create function**.
+5. Choose **Create function**.
+
+![AWS region]({% link /assets/images/labs/lesson20-region.png %})
 
 Lambda creates a Node.js function and an execution role that grants the function
 permission to upload logs. The Lambda function assumes the execution role when
@@ -186,11 +191,103 @@ file in your browser, you **MUST** use the live preview as shown below!
 
 ![AWS Load]({% link /assets/images/labs/lesson20-load.gif %})
 
+## Task 5 - Lambda with AWS CLI
+
+While a lot of what we need to do can be accomplished with the web interface
+that AWS provides we will still need to install the AWS CLI so we can push and
+manage code from the command line. Luckily AWS provides detailed instructions
+for all the major operating systems. If you can't get AWS installed and working
+on your personal machine you will need to do your work in a [Linux virtual
+machine](https://docs.google.com/document/d/1qmOEfgJ0d_-mVFotFbRgInRVfINe98rU-Z6TJiiTMck/edit?usp=sharing).
+You are not required to use a Linux VM it is only provided if you can't
+configure your own machine.
+
+1. [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+2. [Quick configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+
+![AWS access key]({% link /assets/images/labs/lesson20-key.png %})
+
+Use the us-west-2 (Oregon) for the default region.
+
+```bash
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+1. Create a new file named trust-policy.json with the following contents.
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "lambda.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+2. Use the AWS CLI to add the role to your account.
+```bash
+aws iam create-role --role-name lambda-ex --assume-role-policy-document file://trust-policy.json
+```
+3. Add permissions to the role
+```bash
+aws iam attach-role-policy --role-name lambda-ex --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+```
+
+### Create the function
+
+1. Get your AWS Account ID (needed later)
+```bash
+aws sts get-caller-identity \
+    --query Account \
+    --output text
+```
+2. Create a new file named `index.js` with the following content.
+```javascript
+exports.handler = async function(event, context) {
+  console.log("ENVIRONMENT VARIABLES\n" + JSON.stringify(process.env, null, 2))
+  console.log("EVENT\n" + JSON.stringify(event, null, 2))
+  return context.logStreamName
+}
+```
+2. Create a deployment package
+```bash
+zip function.zip index.js
+```
+3. Create a Lambda function with the create-function command. Replace the
+   TODO text in the role ARN with your account ID that you found in the first
+   step.
+```bash
+aws lambda create-function --function-name my-aws-function-cli \
+--zip-file fileb://function.zip --handler index.handler --runtime nodejs16.x \
+--role arn:aws:iam::TODO:role/lambda-ex
+```
+4. Open the [Functions
+   page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda
+   console and confirm that your function was created. Make sure and switch to
+   to Oregon region as shown in the screenshot below.
+5. Create a new test event just like you did before to confirm everything works!
+
+![AWS Load]({% link /assets/images/labs/lesson20-lambda-cli.png %})
+
 ## It didn't work
+
+If you can't find what you created look through all the AWS regions to see if
+you maybe used the wrong region. The AWS console defaults to US East (N.
+Virginia) `us-east-1`, make sure and select US West (Oregon).
+
+![AWS region]({% link /assets/images/labs/lesson20-region.png %})
 
 If you have completed everything and your code doesn't work you may have missed
 a step. At this point instead of trying to figure out what went wrong it is
-easier to just start over from scratch.
+easier to just start over from scratch. Follow the steps below and then try
+again.
 
 ### Delete your Function
 
@@ -210,14 +307,19 @@ that the console created.
 3. Choose **Actions**, **Delete log group\(s\)**.
 4. In the **Delete log group\(s\)** dialog box, choose **Delete**.
 
-## Deliverables (35pts)
+## Task 6 -  Add Files (10pts)
 
-For this lab you need to check in the completed index.html file that you
-created that has the AWS lambda function URL updated.
+For this lab you need to check in the completed index.html file that you created
+that has the AWS lambda function URL updated and the index.js file that you
+created when setting up the AWS CLI portion. The point of this assignment was to
+get everything setup and working, adding both files to your repository just
+confirms to your instructor that you did in fact work through the process and
+everything is working. I am not grading the content of either the index.html or
+index.js just that they are present and not empty.
 
-## Task 5 - Flipgrid (10pts)
+## Task 7 - Flipgrid (35pts)
 
-Show off your website to the class. Once you have everything ready create a video using flipgrid!
+Once you have everything ready create a video using flipgrid!
 
 - [How to record your screen](https://help.flip.com/hc/en-us/articles/360045940833-Screen-Recording-How-to-record-your-screen-using-the-Flipgrid-camera)
 - [Flipgrid topic]({{site.data.semester-info.flip[page.slug]}})
@@ -227,6 +329,7 @@ You need to demo the following:
 - Show your completed Lambda function on AWS
 - Show your simple web page that invokes the function
 
-## Task 6 - Complete the Retrospective (5pts)
+## Task 8 - Complete the Retrospective (5pts)
 
-Once you have completed all the tasks open the file **Retrospective.md** and complete each section with a TODO comment.
+Once you have completed all the tasks open the file **Retrospective.md** and
+complete each section with a TODO comment.

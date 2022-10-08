@@ -1,5 +1,5 @@
 ---
-title: Lab 10 (ch10)
+title: Lab 10 (ch10) - Database
 tag: Full Stack
 layout: lab
 points: 50
@@ -7,39 +7,31 @@ points: 50
 
 ## Overview
 
-In this lab we will build on the previous lab and create a simple REST API that
-is backed by an AWS Database. This will allow us to create a simple
-[CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+In this lab we will build on the previous lab and create a simple REST API using
+AWS Lambda that is backed by an AWS Database. This will allow us to create a
+simple [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 application.
 
-## Task 1 - Using Lambda with API Gateway
-
-You will use Amazon API Gateway to create a REST API and a resource
-(`DynamoDBManager`). You will define one method (`POST`) on the resource, and
-create a Lambda function (`LambdaFunctionOverHttps`) that backs the `POST`
-method. That way, when you call the API through an HTTPS endpoint, API Gateway
-invokes the Lambda function.
-
-The `POST` method that you define on the `DynamoDBManager` resource supports the
-following Amazon DynamoDB operations:
-
-- Create, update, and delete an item.
-- Read an item.
-- Scan an item.
-- Other operations (echo, ping), not related to DynamoDB, that you can use for
-  testing.
-
-### Create an execution policy
+## Task 1 - Create an execution policy
 
 Create an execution role. This AWS Identity and Access Management (IAM) role
 uses a custom policy to give your Lambda function permission to access the
 required AWS resources. Note that you must first create the policy and then
-create the execution role.
+create the execution role. This policy includes permissions for your function to
+access DynamoDB and Amazon CloudWatch Logs.
 
 1. Open the [Policies page](https://console.aws.amazon.com/iam/home#/policies)
    of the IAM console.
 2. Choose **Create Policy**.
-3. Choose the **JSON** tab, and then paste the following custom policy into the JSON editor.
+3. Choose the **JSON** tab, and then paste the following custom policy shown
+   below into the JSON editor.
+4. Choose **Next: Tags**.
+5. Choose **Next: Review**.
+6. Under **Review policy**, for the policy **Name**, enter
+   **lambda-database-policy**.
+7. Choose **Create policy**.
+8. You can then verify that the policy was created by filtering by policy name.
+
 ```json
 {
     "Version": "2012-10-17",
@@ -71,15 +63,11 @@ create the execution role.
 }
 ```
 
-1. Choose **Next: Tags**.
-2. Choose **Next: Review**.
-3. Under **Review policy**, for the policy **Name**, enter **lambda-apigateway-policy**.
-4. Choose **Create policy**.
+![AWS email]({% link /assets/images/labs/lesson22-policy-search.png %})
 
-This policy includes permissions for your function to access DynamoDB and Amazon
-CloudWatch Logs.
+## Task 2 - Create an execution role
 
-### Create an execution role
+Once you have create a new policy you need to assign that policy to a role.
 
 1. Open the [Roles page](https://console.aws.amazon.com/iam/home#/roles) of the
    IAM console.
@@ -87,23 +75,90 @@ CloudWatch Logs.
 3. For the type of trusted entity, choose **AWS service**.
 4. For the use case, choose **Lambda**.
 5. Choose **Next: Permissions**.
-6. In the policy search box, enter **lambda-apigateway-policy**.
-7. In the search results, select the policy that you created
-   (`lambda-apigateway-policy`), and then choose **Next**.
-8. Under **Role Details**, for the **Role name**, enter **lambda-apigateway-role**.
+6. In the policy search box, enter **lambda-database-policy**.
+7. In the search results, select that policy and then choose **Next**.
+8. Under **Role Details**, for the **Role name**, enter **lambda-database-role**.
 9. Choose **Create role**
-10. On the **Roles** page, choose the name of your role
-    (`lambda-apigateway-role`).
 
-## Task 2 - Create the Function
+## Task 3 - Create a Lambda
 
-The following code example receives an API Gateway event input and processes the
-messages that this input contains. For illustration, the code writes some of the
-incoming event data to CloudWatch Logs. Create a new lambda function named
-`LambdaFunctionOverHttps` with the following code:
+You need to create a new lambda function with the proper execution role so you
+can access your database.  
+
+1. Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda console.
+2. Create a new lambda function named `lambda-database-function`.
+3. Change the default execution role to **lambda-database-role**
+4. Select **Create Function**
+5. Add a **Function URL** with Auth type set to **NONE** and **Configure cross-origin resource sharing (CORS)**
+
+**NOTE:** We are opening up our database without authentication which is
+generally a bad thing! In industry you would want to have some sort of
+authentication implemented to protect your data. For learning purposes,
+authentication is something that we can add after everything is already working
+😊.
+
+![AWS email]({% link /assets/images/labs/lesson22-lambda-with-role.png %})
+
+## Task 4 - Create a DynamoDB table
+
+Read about AWS DynamoDB before you continue.
+
+- [DynamoDB Core Components](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html)
+- [Create SQL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.WriteData.html)
+- [Read SQL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.ReadData.SingleItem.html)
+- [Update SQL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.UpdateData.html)
+- [Delete SQL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.DeleteData.html)
+
+Create the DynamoDB table that your Lambda function uses.
+
+1. Open the [Tables page](https://console.aws.amazon.com/dynamodbv2#tables) of the DynamoDB console.
+2. Choose **Create table**.
+3. Under **Table details**, do the following:
+   1. For **Table name**, enter **lambda-database**.
+   2. For **Partition key**, enter **id**, and keep the data type set as **String**.
+4. Under **Settings**, keep the **Default settings**.
+5. Choose **Create table**.
+
+Wait for the status of the table to change to **Active** before you move
+forward.
+
+![AWS email]({% link /assets/images/labs/lesson22-database.png %})
+
+Now lets write and test our SQL queries in the built in editor so we can have
+them all ready for when we write our Lambda function.
+
+1. Open the [PartiQL editor](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#partiql-editor)
+2. Insert a test object so we can see things working!
+3. Play around with the PartiQL editor testing various SQL statements before you continue.
+
+```sql
+INSERT INTO "lambda-database" value {'id': 'blog-id', 'body':'blog body'};
+```
+
+![AWS dynamo insert]({% link /assets/images/labs/lesson22-dynamo-insert.png %})
+
+Run a simple `SELECT` Query to see your results.
+
+`SELECT * FROM "lambda-database"`
+
+![AWS dynamo select]({% link /assets/images/labs/lesson22-dynamo-select.png %})
+
+## Task 5 - Write your Lambda
+
+Before you start writing code you should read the articles listed below so
+you are familiar with the terms we will introduce. We will be using the AWS SDK
+to access our DynamoDB instance
+
+- [Invoking Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-invocation.html)
+- [Lambda handler](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
+- [Write an Item](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.WriteItem.html)
+- [Read an Item](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.ReadItem.html)
+- [Update an Item](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.UpdateItem.html)
+- [Delete an Item](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.UpdateItem.html)
+
+Using the **Code source** editor on AWS update your Lambda to the following:
 
 ```javascript
-console.log('Loading function');
 
 var AWS = require('aws-sdk');
 var dynamo = new AWS.DynamoDB.DocumentClient();
@@ -151,7 +206,7 @@ exports.handler = function(event, context, callback) {
 };
 ```
 
-### Test the function
+## Task 6 - Test the Lambda
 
 Create a new test event with sample event data to test your function.
 You can invoke the function using the Lambda console.
@@ -166,81 +221,7 @@ You can invoke the function using the Lambda console.
 }
 ```
 
-### Update the functions execution role
 
-You will need to update the lambdas execution role to the
-`lambda-apigateway-role` role.
-
-1. Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda console.
-2. Choose the `LambdaFunctionOverHttps` function that you created
-3. Select Configuration
-4. **Edit** the Execution role
-5. Set the function to use an **Existing role** `lambda-apigateway-role`
-6. Click **Save**
-
-## Task 3 - REST API
-
-In this section, you create an API Gateway REST API (`DynamoDBOperations`) with
-one resource (`DynamoDBManager`) and one method (`POST`). You associate the
-`POST` method with your Lambda function. Then, you test the setup.
-
-When your API method receives an HTTP request, API Gateway invokes your Lambda
-function.
-
-### Create the API
-
-In the following steps, you create the `DynamoDBOperations` REST API using the
-API Gateway console.
-
-1. Open the [API Gateway console](https://console.aws.amazon.com/apigateway)\.
-2. In the **REST API** box, choose **Build**\.
-3. Under **Create new API**, choose **New API**\.
-4. Under **Settings**, do the following:
-   1. For **API name**, enter **DynamoDBOperations**\.
-   2. For **Endpoint Type**, choose **Regional**\.
-5. Choose **Create API**\.
-
-### Create a resource in the API
-
-In the following steps, you create a resource named `DynamoDBManager` in your
-REST API.
-
-1. In the [API Gateway console](https://console.aws.amazon.com/apigateway), in
-   the **Resources** tree of your API, make sure that the root \(`/`\) level is
-   highlighted\. Then, choose **Actions**, **Create Resource**\.
-2. Under **New child resource**, do the following:
-   1. For **Resource Name**, enter **DynamoDBManager**\.
-   2. Keep **Resource Path** set to `/dynamodbmanager`\.
-3. Choose **Create Resource**\.
-
-### Create a POST method on the resource
-
-In the following steps, you create a `POST` method on the `DynamoDBManager`
-resource that you created in the previous section.
-
-1. In the [API Gateway console](https://console.aws.amazon.com/apigateway), in
-   the **Resources** tree of your API, make sure that `/dynamodbmanager` is
-   highlighted. Then, choose **Actions**, **Create Method**.
-2. In the small dropdown menu that appears under `/dynamodbmanager`, choose `POST`, and then choose the check mark icon\.
-3. In the method's **Setup** pane, do the following:
-   1. For **Integration type**, choose **Lambda Function**\.
-   2. For **Lambda Region**, choose the same AWS Region as your Lambda function\.
-   3. For **Lambda Function**, enter the name of your function \(**LambdaFunctionOverHttps**\)\.
-   4. Select **Use Default Timeout**\.
-   5. Choose **Save**\.
-4. In the **Add Permission to Lambda Function** dialog box, choose **OK**\.
-
-## Task 4 - Create a DynamoDB table
-
-Create the DynamoDB table that your Lambda function uses.
-
-1. Open the [Tables page](https://console.aws.amazon.com/dynamodbv2#tables) of the DynamoDB console.
-2. Choose **Create table**.
-3. Under **Table details**, do the following:
-   1. For **Table name**, enter **lambda-apigateway**.
-   2. For **Partition key**, enter **id**, and keep the data type set as **String**.
-4. Under **Settings**, keep the **Default settings**.
-5. Choose **Create table**.
 
 ## Task 5 - Test the setup
 
@@ -305,10 +286,58 @@ The test results should show status `200`, indicating that the `update`
 operation was successful. To confirm, you can check that your DynamoDB table
 now contains an updated item with `"id": "1234ABCD"` and `"number": "10"`.
 
-## Clean up your resources
+## Task 4 - Invoke Function from your localhost
 
-This section is optional. You may want to keep all the AWS resources active
-to use in your next project.
+In this task you will load the JSON object that your Lambda function is sending
+and display it in a web page. Create an `index.html` page with the following
+content:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test AWS Lambda</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Get Information</h1>
+    <p id="lambda-info">
+        <!-- loaded with AJAX -->
+    </p>
+    <button id="load-data">Load Data</button>
+
+    <script>
+        document.getElementById("load-data").onclick = function () {
+            let lambda = document.getElementById("lambda-info");
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", function () {
+                lambda.innerHTML = xhr.response;
+            });
+            xhr.open("GET", "YOUR LAMBDA URL HERE!");
+            xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>
+```
+
+## It didn't work
+
+If you have completed everything and your code doesn't work you may have missed
+a step. At this point instead of trying to figure out what went wrong it is
+easier to just start over from scratch.
+
+This section is optional and only necessary if you are having issues getting
+things to work. If everything works you are welcome to keep all your work alive
+and use it for your next project or as a reference.
 
 ### Delete the Lambda
 
@@ -324,12 +353,12 @@ to use in your next project.
 3. Choose **Delete role**.
 4. Choose **Yes, delete**.
 
-### Delete the API
+### Delete the policy
 
-1. Open the [APIs page](https://console.aws.amazon.com/apigateway/main/apis) of the API Gateway console.
-2. Select the API you created.
-3. Choose **Actions**, **Delete**.
-4. Choose **Delete**.
+1. Open the [Policies page](https://console.aws.amazon.com/iam/home#/policies) of the IAM console.
+2. Select the policy that you created.
+3. Choose **Actions: Delete**
+4. Choose **Yes, delete**
 
 ### Delete the DynamoDB table
 
