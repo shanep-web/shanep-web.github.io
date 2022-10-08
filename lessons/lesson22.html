@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" type="image/x-icon" href="/" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Lab 10 (ch10) | CS401</title>
+<title>Lab 10 (ch10) - Database | CS401</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="Lab 10 (ch10)" />
+<meta property="og:title" content="Lab 10 (ch10) - Database" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Overview" />
 <meta property="og:description" content="Overview" />
@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://shanep-web.github.io/lessons/lesson22.html" />
 <meta property="og:site_name" content="CS401" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-07T11:30:32-05:00" />
+<meta property="article:published_time" content="2022-10-08T12:36:21-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Lab 10 (ch10)" />
+<meta property="twitter:title" content="Lab 10 (ch10) - Database" />
 <script type="application/ld+json">
-{"url":"https://shanep-web.github.io/lessons/lesson22.html","headline":"Lab 10 (ch10)","dateModified":"2022-10-07T11:30:32-05:00","datePublished":"2022-10-07T11:30:32-05:00","description":"Overview","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson22.html"},"@context":"https://schema.org"}</script>
+{"url":"https://shanep-web.github.io/lessons/lesson22.html","headline":"Lab 10 (ch10) - Database","dateModified":"2022-10-08T12:36:21-05:00","datePublished":"2022-10-08T12:36:21-05:00","description":"Overview","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson22.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://shanep-web.github.io/feed.xml" title="CS401" /><link rel="stylesheet" href="https://shanep-web.github.io/assets/css/main_new.css" />
 
@@ -67,7 +67,7 @@
 
 
     <h2 id="Toc">Contents</h2>
-    <ul><li><a href="#overview">Overview</a></li><li><a href="#task-1---using-lambda-with-api-gateway">Task 1 - Using Lambda with API Gateway</a><ul><li><a href="#create-an-execution-policy">Create an execution policy</a></li><li><a href="#create-an-execution-role">Create an execution role</a></li></ul></li><li><a href="#task-2---create-the-function">Task 2 - Create the Function</a><ul><li><a href="#test-the-function">Test the function</a></li><li><a href="#update-the-functions-execution-role">Update the functions execution role</a></li></ul></li><li><a href="#task-3---rest-api">Task 3 - REST API</a><ul><li><a href="#create-the-api">Create the API</a></li><li><a href="#create-a-resource-in-the-api">Create a resource in the API</a></li><li><a href="#create-a-post-method-on-the-resource">Create a POST method on the resource</a></li></ul></li><li><a href="#task-4---create-a-dynamodb-table">Task 4 - Create a DynamoDB table</a></li><li><a href="#task-5---test-the-setup">Task 5 - Test the setup</a><ul><li><a href="#test-the-update">Test the update</a></li></ul></li><li><a href="#clean-up-your-resources">Clean up your resources</a><ul><li><a href="#delete-the-lambda">Delete the Lambda</a></li><li><a href="#delete-the-execution-role">Delete the execution Role</a></li><li><a href="#delete-the-api">Delete the API</a></li><li><a href="#delete-the-dynamodb-table">Delete the DynamoDB table</a></li></ul></li><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
+    <ul><li><a href="#overview">Overview</a></li><li><a href="#task-1---create-an-execution-policy">Task 1 - Create an execution policy</a></li><li><a href="#task-2---create-an-execution-role">Task 2 - Create an execution role</a></li><li><a href="#task-3---create-a-lambda">Task 3 - Create a Lambda</a></li><li><a href="#task-4---create-a-dynamodb-table">Task 4 - Create a DynamoDB table</a></li><li><a href="#task-5---write-your-lambda">Task 5 - Write your Lambda</a></li><li><a href="#task-6---test-the-lambda">Task 6 - Test the Lambda</a></li><li><a href="#task-5---test-the-setup">Task 5 - Test the setup</a><ul><li><a href="#test-the-update">Test the update</a></li></ul></li><li><a href="#task-4---invoke-function-from-your-localhost">Task 4 - Invoke Function from your localhost</a></li><li><a href="#it-didnt-work">It didn’t work</a><ul><li><a href="#delete-the-lambda">Delete the Lambda</a></li><li><a href="#delete-the-execution-role">Delete the execution Role</a></li><li><a href="#delete-the-policy">Delete the policy</a></li><li><a href="#delete-the-dynamodb-table">Delete the DynamoDB table</a></li></ul></li><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
 
 </div>
 
@@ -75,7 +75,7 @@
 <div id="main-content" class="post-content">
     <article>
         
-            <h1>Lab 10 (ch10)</h1>
+            <h1>Lab 10 (ch10) - Database</h1>
         
         
         <h2 id="overview">
@@ -87,100 +87,80 @@
       </h2>
     
 
-<p>In this lab we will build on the previous lab and create a simple REST API that
-is backed by an AWS Database. This will allow us to create a simple
-<a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>
+<p>In this lab we will build on the previous lab and create a simple REST API using
+AWS Lambda that is backed by an AWS Database. This will allow us to create a
+simple <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>
 application.</p>
-      <h2 id="task-1---using-lambda-with-api-gateway">
+      <h2 id="task-1---create-an-execution-policy">
         
         
-          Task 1 - Using Lambda with API Gateway <a href="#task-1---using-lambda-with-api-gateway">#</a>
+          Task 1 - Create an execution policy <a href="#task-1---create-an-execution-policy">#</a>
         
         
       </h2>
     
 
-<p>You will use Amazon API Gateway to create a REST API and a resource
-(<code class="language-plaintext highlighter-rouge">DynamoDBManager</code>). You will define one method (<code class="language-plaintext highlighter-rouge">POST</code>) on the resource, and
-create a Lambda function (<code class="language-plaintext highlighter-rouge">LambdaFunctionOverHttps</code>) that backs the <code class="language-plaintext highlighter-rouge">POST</code>
-method. That way, when you call the API through an HTTPS endpoint, API Gateway
-invokes the Lambda function.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">POST</code> method that you define on the <code class="language-plaintext highlighter-rouge">DynamoDBManager</code> resource supports the
-following Amazon DynamoDB operations:</p>
-
-<ul>
-  <li>Create, update, and delete an item.</li>
-  <li>Read an item.</li>
-  <li>Scan an item.</li>
-  <li>Other operations (echo, ping), not related to DynamoDB, that you can use for
-testing.</li>
-</ul>
-      <h3 id="create-an-execution-policy">
-        
-        
-          Create an execution policy <a href="#create-an-execution-policy">#</a>
-        
-        
-      </h3>
-    
-
 <p>Create an execution role. This AWS Identity and Access Management (IAM) role
 uses a custom policy to give your Lambda function permission to access the
 required AWS resources. Note that you must first create the policy and then
-create the execution role.</p>
+create the execution role. This policy includes permissions for your function to
+access DynamoDB and Amazon CloudWatch Logs.</p>
 
 <ol>
   <li>Open the <a href="https://console.aws.amazon.com/iam/home#/policies">Policies page</a>
 of the IAM console.</li>
   <li>Choose <strong>Create Policy</strong>.</li>
-  <li>Choose the <strong>JSON</strong> tab, and then paste the following custom policy into the JSON editor.
-    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"Statement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
- </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"Sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stmt1428341300017"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-     </span><span class="s2">"dynamodb:DeleteItem"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"dynamodb:GetItem"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"dynamodb:PutItem"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"dynamodb:Query"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"dynamodb:Scan"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"dynamodb:UpdateItem"</span><span class="w">
-     </span><span class="p">],</span><span class="w">
-     </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
- </span><span class="p">},</span><span class="w">
- </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"Sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-     </span><span class="s2">"logs:CreateLogGroup"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"logs:CreateLogStream"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"logs:PutLogEvents"</span><span class="w">
-     </span><span class="p">],</span><span class="w">
-     </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="w">
- </span><span class="p">}</span><span class="w">
- </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>    </div>
-  </li>
+  <li>Choose the <strong>JSON</strong> tab, and then paste the following custom policy shown
+below into the JSON editor.</li>
   <li>Choose <strong>Next: Tags</strong>.</li>
   <li>Choose <strong>Next: Review</strong>.</li>
-  <li>Under <strong>Review policy</strong>, for the policy <strong>Name</strong>, enter <strong>lambda-apigateway-policy</strong>.</li>
+  <li>Under <strong>Review policy</strong>, for the policy <strong>Name</strong>, enter
+<strong>lambda-database-policy</strong>.</li>
   <li>Choose <strong>Create policy</strong>.</li>
+  <li>You can then verify that the policy was created by filtering by policy name.</li>
 </ol>
 
-<p>This policy includes permissions for your function to access DynamoDB and Amazon
-CloudWatch Logs.</p>
-      <h3 id="create-an-execution-role">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Statement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stmt1428341300017"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"dynamodb:DeleteItem"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dynamodb:GetItem"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dynamodb:PutItem"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dynamodb:Query"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dynamodb:Scan"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dynamodb:UpdateItem"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"logs:CreateLogGroup"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:CreateLogStream"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:PutLogEvents"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/assets/images/labs/lesson22-policy-search.png" alt="AWS email" /></p>
+      <h2 id="task-2---create-an-execution-role">
         
         
-          Create an execution role <a href="#create-an-execution-role">#</a>
+          Task 2 - Create an execution role <a href="#task-2---create-an-execution-role">#</a>
         
         
-      </h3>
+      </h2>
     
+
+<p>Once you have create a new policy you need to assign that policy to a role.</p>
 
 <ol>
   <li>Open the <a href="https://console.aws.amazon.com/iam/home#/roles">Roles page</a> of the
@@ -189,30 +169,121 @@ IAM console.</li>
   <li>For the type of trusted entity, choose <strong>AWS service</strong>.</li>
   <li>For the use case, choose <strong>Lambda</strong>.</li>
   <li>Choose <strong>Next: Permissions</strong>.</li>
-  <li>In the policy search box, enter <strong>lambda-apigateway-policy</strong>.</li>
-  <li>In the search results, select the policy that you created
-(<code class="language-plaintext highlighter-rouge">lambda-apigateway-policy</code>), and then choose <strong>Next</strong>.</li>
-  <li>Under <strong>Role Details</strong>, for the <strong>Role name</strong>, enter <strong>lambda-apigateway-role</strong>.</li>
+  <li>In the policy search box, enter <strong>lambda-database-policy</strong>.</li>
+  <li>In the search results, select that policy and then choose <strong>Next</strong>.</li>
+  <li>Under <strong>Role Details</strong>, for the <strong>Role name</strong>, enter <strong>lambda-database-role</strong>.</li>
   <li>Choose <strong>Create role</strong></li>
-  <li>On the <strong>Roles</strong> page, choose the name of your role
-(<code class="language-plaintext highlighter-rouge">lambda-apigateway-role</code>).</li>
 </ol>
-      <h2 id="task-2---create-the-function">
+      <h2 id="task-3---create-a-lambda">
         
         
-          Task 2 - Create the Function <a href="#task-2---create-the-function">#</a>
+          Task 3 - Create a Lambda <a href="#task-3---create-a-lambda">#</a>
         
         
       </h2>
     
 
-<p>The following code example receives an API Gateway event input and processes the
-messages that this input contains. For illustration, the code writes some of the
-incoming event data to CloudWatch Logs. Create a new lambda function named
-<code class="language-plaintext highlighter-rouge">LambdaFunctionOverHttps</code> with the following code:</p>
+<p>You need to create a new lambda function with the proper execution role so you
+can access your database.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Loading function</span><span class="dl">'</span><span class="p">);</span>
+<ol>
+  <li>Open the <a href="https://console.aws.amazon.com/lambda/home#/functions">Functions page</a> of the Lambda console.</li>
+  <li>Create a new lambda function named <code class="language-plaintext highlighter-rouge">lambda-database-function</code>.</li>
+  <li>Change the default execution role to <strong>lambda-database-role</strong></li>
+  <li>Select <strong>Create Function</strong></li>
+  <li>Add a <strong>Function URL</strong> with Auth type set to <strong>NONE</strong> and <strong>Configure cross-origin resource sharing (CORS)</strong></li>
+</ol>
 
+<p><strong>NOTE:</strong> We are opening up our database without authentication which is
+generally a bad thing! In industry you would want to have some sort of
+authentication implemented to protect your data. For learning purposes,
+authentication is something that we can add after everything is already working
+😊.</p>
+
+<p><img src="/assets/images/labs/lesson22-lambda-with-role.png" alt="AWS email" /></p>
+      <h2 id="task-4---create-a-dynamodb-table">
+        
+        
+          Task 4 - Create a DynamoDB table <a href="#task-4---create-a-dynamodb-table">#</a>
+        
+        
+      </h2>
+    
+
+<p>Read about AWS DynamoDB before you continue.</p>
+
+<ul>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html">DynamoDB Core Components</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.WriteData.html">Create SQL</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.ReadData.SingleItem.html">Read SQL</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.UpdateData.html">Update SQL</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SQLtoNoSQL.DeleteData.html">Delete SQL</a></li>
+</ul>
+
+<p>Create the DynamoDB table that your Lambda function uses.</p>
+
+<ol>
+  <li>Open the <a href="https://console.aws.amazon.com/dynamodbv2#tables">Tables page</a> of the DynamoDB console.</li>
+  <li>Choose <strong>Create table</strong>.</li>
+  <li>Under <strong>Table details</strong>, do the following:
+    <ol>
+      <li>For <strong>Table name</strong>, enter <strong>lambda-database</strong>.</li>
+      <li>For <strong>Partition key</strong>, enter <strong>id</strong>, and keep the data type set as <strong>String</strong>.</li>
+    </ol>
+  </li>
+  <li>Under <strong>Settings</strong>, keep the <strong>Default settings</strong>.</li>
+  <li>Choose <strong>Create table</strong>.</li>
+</ol>
+
+<p>Wait for the status of the table to change to <strong>Active</strong> before you move
+forward.</p>
+
+<p><img src="/assets/images/labs/lesson22-database.png" alt="AWS email" /></p>
+
+<p>Now lets write and test our SQL queries in the built in editor so we can have
+them all ready for when we write our Lambda function.</p>
+
+<ol>
+  <li>Open the <a href="https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#partiql-editor">PartiQL editor</a></li>
+  <li>Insert a test object so we can see things working!</li>
+  <li>Play around with the PartiQL editor testing various SQL statements before you continue.</li>
+</ol>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">"lambda-database"</span> <span class="n">value</span> <span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'blog-id'</span><span class="p">,</span> <span class="s1">'body'</span><span class="p">:</span><span class="s1">'blog body'</span><span class="p">};</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/labs/lesson22-dynamo-insert.png" alt="AWS dynamo insert" /></p>
+
+<p>Run a simple <code class="language-plaintext highlighter-rouge">SELECT</code> Query to see your results.</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM "lambda-database"</code></p>
+
+<p><img src="/assets/images/labs/lesson22-dynamo-select.png" alt="AWS dynamo select" /></p>
+      <h2 id="task-5---write-your-lambda">
+        
+        
+          Task 5 - Write your Lambda <a href="#task-5---write-your-lambda">#</a>
+        
+        
+      </h2>
+    
+
+<p>Before you start writing code you should read the articles listed below so
+you are familiar with the terms we will introduce. We will be using the AWS SDK
+to access our DynamoDB instance</p>
+
+<ul>
+  <li><a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-invocation.html">Invoking Lambda function URLs</a></li>
+  <li><a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html">Lambda handler</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.WriteItem.html">Write an Item</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.ReadItem.html">Read an Item</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.UpdateItem.html">Update an Item</a></li>
+  <li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.UpdateItem.html">Delete an Item</a></li>
+</ul>
+
+<p>Using the <strong>Code source</strong> editor on AWS update your Lambda to the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">var</span> <span class="nx">AWS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">aws-sdk</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">dynamo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">DynamoDB</span><span class="p">.</span><span class="nx">DocumentClient</span><span class="p">();</span>
 
@@ -258,13 +329,13 @@ incoming event data to CloudWatch Logs. Create a new lambda function named
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></div>
-      <h3 id="test-the-function">
+      <h2 id="task-6---test-the-lambda">
         
         
-          Test the function <a href="#test-the-function">#</a>
+          Task 6 - Test the Lambda <a href="#task-6---test-the-lambda">#</a>
         
         
-      </h3>
+      </h2>
     
 
 <p>Create a new test event with sample event data to test your function.
@@ -278,140 +349,6 @@ You can invoke the function using the Lambda console.</p>
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-      <h3 id="update-the-functions-execution-role">
-        
-        
-          Update the functions execution role <a href="#update-the-functions-execution-role">#</a>
-        
-        
-      </h3>
-    
-
-<p>You will need to update the lambdas execution role to the
-<code class="language-plaintext highlighter-rouge">lambda-apigateway-role</code> role.</p>
-
-<ol>
-  <li>Open the <a href="https://console.aws.amazon.com/lambda/home#/functions">Functions page</a> of the Lambda console.</li>
-  <li>Choose the <code class="language-plaintext highlighter-rouge">LambdaFunctionOverHttps</code> function that you created</li>
-  <li>Select Configuration</li>
-  <li><strong>Edit</strong> the Execution role</li>
-  <li>Set the function to use an <strong>Existing role</strong> <code class="language-plaintext highlighter-rouge">lambda-apigateway-role</code></li>
-  <li>Click <strong>Save</strong></li>
-</ol>
-      <h2 id="task-3---rest-api">
-        
-        
-          Task 3 - REST API <a href="#task-3---rest-api">#</a>
-        
-        
-      </h2>
-    
-
-<p>In this section, you create an API Gateway REST API (<code class="language-plaintext highlighter-rouge">DynamoDBOperations</code>) with
-one resource (<code class="language-plaintext highlighter-rouge">DynamoDBManager</code>) and one method (<code class="language-plaintext highlighter-rouge">POST</code>). You associate the
-<code class="language-plaintext highlighter-rouge">POST</code> method with your Lambda function. Then, you test the setup.</p>
-
-<p>When your API method receives an HTTP request, API Gateway invokes your Lambda
-function.</p>
-      <h3 id="create-the-api">
-        
-        
-          Create the API <a href="#create-the-api">#</a>
-        
-        
-      </h3>
-    
-
-<p>In the following steps, you create the <code class="language-plaintext highlighter-rouge">DynamoDBOperations</code> REST API using the
-API Gateway console.</p>
-
-<ol>
-  <li>Open the <a href="https://console.aws.amazon.com/apigateway">API Gateway console</a>.</li>
-  <li>In the <strong>REST API</strong> box, choose <strong>Build</strong>.</li>
-  <li>Under <strong>Create new API</strong>, choose <strong>New API</strong>.</li>
-  <li>Under <strong>Settings</strong>, do the following:
-    <ol>
-      <li>For <strong>API name</strong>, enter <strong>DynamoDBOperations</strong>.</li>
-      <li>For <strong>Endpoint Type</strong>, choose <strong>Regional</strong>.</li>
-    </ol>
-  </li>
-  <li>Choose <strong>Create API</strong>.</li>
-</ol>
-      <h3 id="create-a-resource-in-the-api">
-        
-        
-          Create a resource in the API <a href="#create-a-resource-in-the-api">#</a>
-        
-        
-      </h3>
-    
-
-<p>In the following steps, you create a resource named <code class="language-plaintext highlighter-rouge">DynamoDBManager</code> in your
-REST API.</p>
-
-<ol>
-  <li>In the <a href="https://console.aws.amazon.com/apigateway">API Gateway console</a>, in
-the <strong>Resources</strong> tree of your API, make sure that the root (<code class="language-plaintext highlighter-rouge">/</code>) level is
-highlighted. Then, choose <strong>Actions</strong>, <strong>Create Resource</strong>.</li>
-  <li>Under <strong>New child resource</strong>, do the following:
-    <ol>
-      <li>For <strong>Resource Name</strong>, enter <strong>DynamoDBManager</strong>.</li>
-      <li>Keep <strong>Resource Path</strong> set to <code class="language-plaintext highlighter-rouge">/dynamodbmanager</code>.</li>
-    </ol>
-  </li>
-  <li>Choose <strong>Create Resource</strong>.</li>
-</ol>
-      <h3 id="create-a-post-method-on-the-resource">
-        
-        
-          Create a POST method on the resource <a href="#create-a-post-method-on-the-resource">#</a>
-        
-        
-      </h3>
-    
-
-<p>In the following steps, you create a <code class="language-plaintext highlighter-rouge">POST</code> method on the <code class="language-plaintext highlighter-rouge">DynamoDBManager</code>
-resource that you created in the previous section.</p>
-
-<ol>
-  <li>In the <a href="https://console.aws.amazon.com/apigateway">API Gateway console</a>, in
-the <strong>Resources</strong> tree of your API, make sure that <code class="language-plaintext highlighter-rouge">/dynamodbmanager</code> is
-highlighted. Then, choose <strong>Actions</strong>, <strong>Create Method</strong>.</li>
-  <li>In the small dropdown menu that appears under <code class="language-plaintext highlighter-rouge">/dynamodbmanager</code>, choose <code class="language-plaintext highlighter-rouge">POST</code>, and then choose the check mark icon.</li>
-  <li>In the method’s <strong>Setup</strong> pane, do the following:
-    <ol>
-      <li>For <strong>Integration type</strong>, choose <strong>Lambda Function</strong>.</li>
-      <li>For <strong>Lambda Region</strong>, choose the same AWS Region as your Lambda function.</li>
-      <li>For <strong>Lambda Function</strong>, enter the name of your function (<strong>LambdaFunctionOverHttps</strong>).</li>
-      <li>Select <strong>Use Default Timeout</strong>.</li>
-      <li>Choose <strong>Save</strong>.</li>
-    </ol>
-  </li>
-  <li>In the <strong>Add Permission to Lambda Function</strong> dialog box, choose <strong>OK</strong>.</li>
-</ol>
-      <h2 id="task-4---create-a-dynamodb-table">
-        
-        
-          Task 4 - Create a DynamoDB table <a href="#task-4---create-a-dynamodb-table">#</a>
-        
-        
-      </h2>
-    
-
-<p>Create the DynamoDB table that your Lambda function uses.</p>
-
-<ol>
-  <li>Open the <a href="https://console.aws.amazon.com/dynamodbv2#tables">Tables page</a> of the DynamoDB console.</li>
-  <li>Choose <strong>Create table</strong>.</li>
-  <li>Under <strong>Table details</strong>, do the following:
-    <ol>
-      <li>For <strong>Table name</strong>, enter <strong>lambda-apigateway</strong>.</li>
-      <li>For <strong>Partition key</strong>, enter <strong>id</strong>, and keep the data type set as <strong>String</strong>.</li>
-    </ol>
-  </li>
-  <li>Under <strong>Settings</strong>, keep the <strong>Default settings</strong>.</li>
-  <li>Choose <strong>Create table</strong>.</li>
-</ol>
       <h2 id="task-5---test-the-setup">
         
         
@@ -490,17 +427,70 @@ now contains an item with <code class="language-plaintext highlighter-rouge">"id
 <p>The test results should show status <code class="language-plaintext highlighter-rouge">200</code>, indicating that the <code class="language-plaintext highlighter-rouge">update</code>
 operation was successful. To confirm, you can check that your DynamoDB table
 now contains an updated item with <code class="language-plaintext highlighter-rouge">"id": "1234ABCD"</code> and <code class="language-plaintext highlighter-rouge">"number": "10"</code>.</p>
-      <h2 id="clean-up-your-resources">
+      <h2 id="task-4---invoke-function-from-your-localhost">
         
         
-          Clean up your resources <a href="#clean-up-your-resources">#</a>
+          Task 4 - Invoke Function from your localhost <a href="#task-4---invoke-function-from-your-localhost">#</a>
         
         
       </h2>
     
 
-<p>This section is optional. You may want to keep all the AWS resources active
-to use in your next project.</p>
+<p>In this task you will load the JSON object that your Lambda function is sending
+and display it in a web page. Create an <code class="language-plaintext highlighter-rouge">index.html</code> page with the following
+content:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Test AWS Lambda<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Get Information<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"lambda-info"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- loaded with AJAX --&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"load-data"</span><span class="nt">&gt;</span>Load Data<span class="nt">&lt;/button&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">load-data</span><span class="dl">"</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">lambda</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">lambda-info</span><span class="dl">"</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">lambda</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
+            <span class="p">});</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">YOUR LAMBDA URL HERE!</span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+        <span class="p">}</span>
+
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+      <h2 id="it-didnt-work">
+        
+        
+          It didn’t work <a href="#it-didnt-work">#</a>
+        
+        
+      </h2>
+    
+
+<p>If you have completed everything and your code doesn’t work you may have missed
+a step. At this point instead of trying to figure out what went wrong it is
+easier to just start over from scratch.</p>
+
+<p>This section is optional and only necessary if you are having issues getting
+things to work. If everything works you are welcome to keep all your work alive
+and use it for your next project or as a reference.</p>
       <h3 id="delete-the-lambda">
         
         
@@ -531,20 +521,20 @@ to use in your next project.</p>
   <li>Choose <strong>Delete role</strong>.</li>
   <li>Choose <strong>Yes, delete</strong>.</li>
 </ol>
-      <h3 id="delete-the-api">
+      <h3 id="delete-the-policy">
         
         
-          Delete the API <a href="#delete-the-api">#</a>
+          Delete the policy <a href="#delete-the-policy">#</a>
         
         
       </h3>
     
 
 <ol>
-  <li>Open the <a href="https://console.aws.amazon.com/apigateway/main/apis">APIs page</a> of the API Gateway console.</li>
-  <li>Select the API you created.</li>
-  <li>Choose <strong>Actions</strong>, <strong>Delete</strong>.</li>
-  <li>Choose <strong>Delete</strong>.</li>
+  <li>Open the <a href="https://console.aws.amazon.com/iam/home#/policies">Policies page</a> of the IAM console.</li>
+  <li>Select the policy that you created.</li>
+  <li>Choose <strong>Actions: Delete</strong></li>
+  <li>Choose <strong>Yes, delete</strong></li>
 </ol>
       <h3 id="delete-the-dynamodb-table">
         
@@ -587,7 +577,7 @@ to use in your next project.</p>
     
 
 <ul>
-    <li>Get the <a href="/docs/starter-code.html">Starter Code</a></li>
+    <li>Get the <a href="https://classroom.github.com/a/uHQ7M1yS">Starter Code</a></li>
     <li>When you accept the assignment it is critical that you select your student email
         address from the list. If you don't select your student email address your instructor will not be
         able to grade your code. If you can't find your email in the list, contact your instructor ASAP to
@@ -616,7 +606,7 @@ to use in your next project.</p>
     <div class="contact">
         <ul>
             <li>
-                 2022-10-07 | layout: lab</li>
+                 2022-10-08 | layout: lab</li>
             <li>contact: shanepanter@boisestate.edu</li>
             <li>theme: <a href="https://github.com/shanep/shanep-class">shanep-class</a></li>       
             
