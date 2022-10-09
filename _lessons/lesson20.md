@@ -46,7 +46,7 @@ interface (CLI) for more complex functions.
 2. Switch to the US West (Oregon) data center
 3. Choose **Create function**
 4. Under **Basic information**, do the following:
-   - For **Function name**, enter **my-function**.
+   - For **Function name**, use your student email, for example **myname-u-boisestate-edu**
    - For **Runtime**, confirm that **Node.js 16.x** is selected.
    - Keep all other setting in their default state
 5. Choose **Create function**.
@@ -216,37 +216,11 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
-1. Create a new file named trust-policy.json with the following contents.
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "lambda.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-```
-2. Use the AWS CLI to add the role to your account.
-```bash
-aws iam create-role --role-name lambda-ex --assume-role-policy-document file://trust-policy.json
-```
-3. Add permissions to the role
-```bash
-aws iam attach-role-policy --role-name lambda-ex --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-```
-
 ### Create the function
 
 1. Get your AWS Account ID (needed later)
 ```bash
-aws sts get-caller-identity \
-    --query Account \
-    --output text
+aws sts get-caller-identity --query Account --output text
 ```
 2. Create a new file named `index.js` with the following content.
 ```javascript
@@ -299,13 +273,6 @@ that the console created.
 2. Choose a function.
 3. Choose **Actions**, **Delete**.
 4. In the **Delete function** dialog box, choose **Delete**.
-
-### Delete your Logs
-
-1. Open the [Log groups page](https://console.aws.amazon.com/cloudwatch/home#logs:) of the CloudWatch console.
-2. Select the function's log group `/aws/lambda/my-function`.
-3. Choose **Actions**, **Delete log group\(s\)**.
-4. In the **Delete log group\(s\)** dialog box, choose **Delete**.
 
 ## Task 6 -  Add Files (10pts)
 
