@@ -43,64 +43,23 @@ start off by using the console and then will switch to using the command line
 interface (CLI) for more complex functions.
 
 1. Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda console
-2. Switch to the US West (Oregon) data center
+2. Switch to the US West (Oregon) data center ![AWS region]({% link /assets/images/labs/lesson20-region.png %})
 3. Choose **Create function**
 4. Under **Basic information**, do the following:
-   - For **Function name**, use your student email, for example **myname-u-boisestate-edu**
+   - For **Function name**, use your student email, for example **student01-u-boisestate-edu**
    - For **Runtime**, confirm that **Node.js 16.x** is selected.
+   - Change the default execution role
+     - Select **Use an existing role**
+     - Select **lambda-database-role**
    - Keep all other setting in their default state
 5. Choose **Create function**.
 
-![AWS region]({% link /assets/images/labs/lesson20-region.png %})
+![AWS create function]({% link /assets/images/labs/lesson20-create-function.png %})
 
 Lambda creates a Node.js function and an execution role that grants the function
 permission to upload logs. The Lambda function assumes the execution role when
 you invoke your function, and uses the execution role to create credentials for
 the AWS SDK and to read data from event sources.
-
-In the **Code source** section update code listed in **index.js** to what is
-shown below and make sure and deploy the changes.
-
-```javascript
-const data = {
-    "key1": "value1",
-    "key2": "value2",
-    "key3": "value3",
-};
-
-exports.handler = async (event) => {
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify(data),
-    };
-    return response;
-};
-```
-
-![Deploy changes]({% link assets/images/labs/lesson20-deploy.png%})
-
-### Test the Lambda function
-
-You can test  your Lambda function using the sample event data provided in the
-console. This can allow you to quickly verify that everything is working before
-you proceed any further.
-
-1. After selecting your function, choose the **Test** tab.
-2. In the **Configure test event** section, choose **Create new event**.
-3. Give your event a name in the **Even name** field. This can be whatever you
-   want.
-4. In **Template**, leave the default **hello-world** option and then save your
-   changes.
-
-![Test event]({% link assets/images/labs/lesson20-test.png %})
-
-1. Choose **Test**. Each user can create up to 10 test events per function.
-   Those test events are not available to other users. Lambda runs your function
-   on your behalf. The function handler receives and then processes the sample
-   event.
-2. Upon successful completion, view the results in the console.
-
-![Test event]({% link assets/images/labs/lesson20-test.png %})
 
 ## Task 3 - Add a Function URL
 
@@ -138,60 +97,7 @@ this point, we can add it later if necessary.
 
 ![Test event]({% link assets/images/labs/lesson20-auth-type.png %})
 
-At this point your AWS console should look like the following:
-
-![AWS console]({% link /assets/images/labs/lesson20-aws.png %})
-
-## Task 4 - Invoke Function from your localhost
-
-In this task you will load the JSON object that your Lambda function is sending
-and display it in a web page. Create an `index.html` page with the following
-content:
-
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Test AWS Lambda</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-</head>
-
-<body>
-    <h1>Get Information</h1>
-    <p id="lambda-info">
-        <!-- loaded with AJAX -->
-    </p>
-    <button id="load-data">Load Data</button>
-
-    <script>
-        document.getElementById("load-data").onclick = function () {
-            let lambda = document.getElementById("lambda-info");
-            let xhr = new XMLHttpRequest();
-            xhr.addEventListener("load", function () {
-                lambda.innerHTML = xhr.response;
-            });
-            xhr.open("GET", "YOUR LAMBDA URL HERE!");
-            xhr.send();
-        }
-
-    </script>
-</body>
-
-</html>
-```
-
-You now should be able to load data from your AWS Lambda function when using
-the live server preview in VSCode. This will NOT work if you just open up the
-file in your browser, you **MUST** use the live preview as shown below!
-
-![AWS Load]({% link /assets/images/labs/lesson20-load.gif %})
-
-## Task 5 - Lambda with AWS CLI
+## Task 4 - Lambda with AWS CLI
 
 While a lot of what we need to do can be accomplished with the web interface
 that AWS provides we will still need to install the AWS CLI so we can push and
@@ -216,39 +122,84 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ```
 
-### Create the function
+### Update the function
 
-1. Get your AWS Account ID (needed later)
-```bash
-aws sts get-caller-identity --query Account --output text
-```
-2. Create a new file named `index.js` with the following content.
-```javascript
-exports.handler = async function(event, context) {
-  console.log("ENVIRONMENT VARIABLES\n" + JSON.stringify(process.env, null, 2))
-  console.log("EVENT\n" + JSON.stringify(event, null, 2))
-  return context.logStreamName
-}
-```
-2. Create a deployment package
-```bash
-zip function.zip index.js
-```
-3. Create a Lambda function with the create-function command. Replace the
-   TODO text in the role ARN with your account ID that you found in the first
-   step.
-```bash
-aws lambda create-function --function-name my-aws-function-cli \
---zip-file fileb://function.zip --handler index.handler --runtime nodejs16.x \
---role arn:aws:iam::TODO:role/lambda-ex
-```
+You are now going to update the function that you created in the first task from
+the command line. When you start using other AWS services you will need to
+upload **lots** of files and dependencies. This is not something that you want
+to do by hand as the GUI doesn't provide a good way to mass upload files.
+
+1. Open the `update-lambda.sh` shell script in the starter code. It is located
+   in the lambda folder.
+2. Replace `PUT_THE_FUNCTION_NAME_HERE` with your function name that you create
+   in the previous task.
+3. Run the `update-lambda.sh` function.
 4. Open the [Functions
    page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda
-   console and confirm that your function was created. Make sure and switch to
-   to Oregon region as shown in the screenshot below.
-5. Create a new test event just like you did before to confirm everything works!
+   console and confirm that your function was update. Make sure and switch to
+   to Oregon region. ![AWS region]({% link /assets/images/labs/lesson20-region.png %})
 
-![AWS Load]({% link /assets/images/labs/lesson20-lambda-cli.png %})
+### Test the function
+
+You can test  your Lambda function using the sample event data provided in the
+console. This can allow you to quickly verify that everything is working before
+you proceed any further.
+
+1. After selecting your function, choose the **Test** tab.
+2. In the **Configure test event** section, choose **Create new event**.
+3. Give your event a name in the **Even name** field. This can be whatever you
+   want.
+4. Update the Event JSON to match what is shown below.
+5. Save your test event
+
+```json
+{
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "1.2.3.4",
+      "userAgent": "testing"
+    },
+    "requestId": "asdf",
+    "routeKey": "$default",
+    "stage": "$default",
+    "time": "09/Oct/2022:17:29:58 +0000",
+    "timeEpoch": 1665336598126
+  },
+  "isBase64Encoded": false
+}
+```
+
+![Test event]({% link assets/images/labs/lesson20-test.png %})
+
+1. Choose **Test**. Each user can create up to 10 test events per function.
+   Those test events are not available to other users. Lambda runs your function
+   on your behalf. The function handler receives and then processes the sample
+   event.
+2. Upon successful completion, view the results in the console.
+
+![Test event]({% link assets/images/labs/lesson20-test-results.png %})
+
+### Errors
+
+If you see the output below it is because you didn't update the function name
+as required in the `update-lambda.sh` file.
+
+>An error occurred (ResourceNotFoundException) when calling the UpdateFunctionCode operation: Function not found: arn:aws:lambda:us-west-2:064794820934:function:PUT_THE_FUNCTION_NAME_HERE
+
+## Task 5 - Invoke Function from your localhost
+
+We now have a function that we can invoke from our local host! In your starter
+code in the client directory there is an `index.html` file. Replace the
+**YOUR LAMBDA URL HERE!** with the URL that you create in the previous task.
+
+You now should be able to load data from your AWS Lambda function when using
+the live server preview in VSCode. This will NOT work if you just open up the
+file in your browser, you **MUST** use the live preview as shown below!
+
+![AWS Load]({% link /assets/images/labs/lesson20-load.gif %})
 
 ## It didn't work
 
@@ -265,28 +216,23 @@ again.
 
 ### Delete your Function
 
-If you are done working with the example function, delete it. You can also
-delete the log group that stores the function's logs, and the execution role
-that the console created.
-
 1. Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda console.
-2. Choose a function.
+2. Choose YOUR function.
 3. Choose **Actions**, **Delete**.
 4. In the **Delete function** dialog box, choose **Delete**.
+5. Got back to step one and try again 😊
 
-## Task 6 -  Add Files (10pts)
+## Task 6 -  Add Files (5pts)
 
 For this lab you need to check in the completed index.html file that you created
-that has the AWS lambda function URL updated and the index.js file that you
-created when setting up the AWS CLI portion. The point of this assignment was to
-get everything setup and working, adding both files to your repository just
-confirms to your instructor that you did in fact work through the process and
-everything is working. I am not grading the content of either the index.html or
-index.js just that they are present and not empty.
+that has the AWS lambda function URL and all the other files that you updated
+when configuring your code.
 
 ## Task 7 - Flipgrid (35pts)
 
-Once you have everything ready create a video using flipgrid!
+Most of this lab was just configuring everything, so the majority of your grade
+will be you showing off everything working in a video. Once you have everything
+ready create a video using flipgrid!
 
 - [How to record your screen](https://help.flip.com/hc/en-us/articles/360045940833-Screen-Recording-How-to-record-your-screen-using-the-Flipgrid-camera)
 - [Flipgrid topic]({{site.data.semester-info.flip[page.slug]}})
@@ -296,7 +242,7 @@ You need to demo the following:
 - Show your completed Lambda function on AWS
 - Show your simple web page that invokes the function
 
-## Task 8 - Complete the Retrospective (5pts)
+## Task 8 - Complete the Retrospective (10pts)
 
 Once you have completed all the tasks open the file **Retrospective.md** and
 complete each section with a TODO comment.
