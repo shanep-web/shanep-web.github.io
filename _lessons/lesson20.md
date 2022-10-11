@@ -97,7 +97,7 @@ this point, we can add it later if necessary.
 
 ![Test event]({% link assets/images/labs/lesson20-auth-type.png %})
 
-## Task 4 - Lambda with AWS CLI
+## Task 4 - Developing with Lambda
 
 While a lot of what we need to do can be accomplished with the web interface
 that AWS provides we will still need to install the AWS CLI so we can push and
@@ -109,7 +109,10 @@ You are not required to use a Linux VM it is only provided if you can't
 configure your own machine.
 
 1. [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-2. [Quick configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+2. [Install AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+3. [AWS Toolkit for VSCode](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
+4. [Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+5. [Generate Your Access Key](https://us-east-1.console.aws.amazon.com/iam/home#/users/student01)
 
 ![AWS access key]({% link /assets/images/labs/lesson20-key.png %})
 
