@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://shanep-web.github.io/lessons/lesson20.html" />
 <meta property="og:site_name" content="CS401" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-09T13:00:13-05:00" />
+<meta property="article:published_time" content="2022-10-10T21:26:11-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Lab 9 - AWS Lambda" />
 <script type="application/ld+json">
-{"url":"https://shanep-web.github.io/lessons/lesson20.html","headline":"Lab 9 - AWS Lambda","dateModified":"2022-10-09T13:00:13-05:00","datePublished":"2022-10-09T13:00:13-05:00","description":"Overview","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson20.html"},"@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson20.html"},"url":"https://shanep-web.github.io/lessons/lesson20.html","headline":"Lab 9 - AWS Lambda","@type":"BlogPosting","dateModified":"2022-10-10T21:26:11-05:00","datePublished":"2022-10-10T21:26:11-05:00","description":"Overview","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://shanep-web.github.io/feed.xml" title="CS401" /><link rel="stylesheet" href="https://shanep-web.github.io/assets/css/main_new.css" />
 
@@ -67,7 +67,7 @@
 
 
     <h2 id="Toc">Contents</h2>
-    <ul><li><a href="#overview">Overview</a></li><li><a href="#task-1---aws-signup">Task 1 - AWS Signup</a></li><li><a href="#task-2---lambda-console">Task 2 - Lambda Console</a></li><li><a href="#task-3---add-a-function-url">Task 3 - Add a Function URL</a><ul><li><a href="#to-create-a-function-url-for-an-existing-function-console">To create a function URL for an existing function (console)</a></li></ul></li><li><a href="#task-4---lambda-with-aws-cli">Task 4 - Lambda with AWS CLI</a><ul><li><a href="#update-the-function">Update the function</a></li><li><a href="#test-the-function">Test the function</a></li><li><a href="#errors">Errors</a></li></ul></li><li><a href="#task-5---invoke-function-from-your-localhost">Task 5 - Invoke Function from your localhost</a></li><li><a href="#it-didnt-work">It didn’t work</a><ul><li><a href="#delete-your-function">Delete your Function</a></li></ul></li><li><a href="#task-6----add-files-5pts">Task 6 -  Add Files (5pts)</a></li><li><a href="#task-7---flipgrid-35pts">Task 7 - Flipgrid (35pts)</a></li><li><a href="#task-8---complete-the-retrospective-10pts">Task 8 - Complete the Retrospective (10pts)</a></li><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
+    <ul><li><a href="#overview">Overview</a></li><li><a href="#task-1---aws-signup">Task 1 - AWS Signup</a></li><li><a href="#task-2---lambda-console">Task 2 - Lambda Console</a></li><li><a href="#task-3---add-a-function-url">Task 3 - Add a Function URL</a><ul><li><a href="#to-create-a-function-url-for-an-existing-function-console">To create a function URL for an existing function (console)</a></li></ul></li><li><a href="#task-4---developing-with-lambda">Task 4 - Developing with Lambda</a><ul><li><a href="#update-the-function">Update the function</a></li><li><a href="#test-the-function">Test the function</a></li><li><a href="#errors">Errors</a></li></ul></li><li><a href="#task-5---invoke-function-from-your-localhost">Task 5 - Invoke Function from your localhost</a></li><li><a href="#it-didnt-work">It didn’t work</a><ul><li><a href="#delete-your-function">Delete your Function</a></li></ul></li><li><a href="#task-6----add-files-5pts">Task 6 -  Add Files (5pts)</a></li><li><a href="#task-7---flipgrid-35pts">Task 7 - Flipgrid (35pts)</a></li><li><a href="#task-8---complete-the-retrospective-10pts">Task 8 - Complete the Retrospective (10pts)</a></li><li><a href="#github-classroom">Github Classroom</a><ul><li><a href="#accept-the-assignment">Accept the assignment</a></li></ul></li></ul>
 
 </div>
 
@@ -210,10 +210,10 @@ function version. You can’t add a function URL to any other function version.<
 this point, we can add it later if necessary.</p>
 
 <p><img src="/assets/images/labs/lesson20-auth-type.png" alt="Test event" /></p>
-      <h2 id="task-4---lambda-with-aws-cli">
+      <h2 id="task-4---developing-with-lambda">
         
         
-          Task 4 - Lambda with AWS CLI <a href="#task-4---lambda-with-aws-cli">#</a>
+          Task 4 - Developing with Lambda <a href="#task-4---developing-with-lambda">#</a>
         
         
       </h2>
@@ -230,7 +230,10 @@ configure your own machine.</p>
 
 <ol>
   <li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">Install AWS CLI</a></li>
-  <li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html">Quick configuration</a></li>
+  <li><a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html">Install AWS SAM CLI</a></li>
+  <li><a href="https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html">AWS Toolkit for VSCode</a></li>
+  <li><a href="https://hub.docker.com/search/?type=edition&amp;offering=community">Docker community edition</a></li>
+  <li><a href="https://us-east-1.console.aws.amazon.com/iam/home#/users/student01">Generate Your Access Key</a></li>
 </ol>
 
 <p><img src="/assets/images/labs/lesson20-key.png" alt="AWS access key" /></p>
@@ -488,7 +491,7 @@ complete each section with a TODO comment.</p>
     <div class="contact">
         <ul>
             <li>
-                 2022-10-09 | layout: lab</li>
+                 2022-10-10 | layout: lab</li>
             <li>contact: shanepanter@boisestate.edu</li>
             <li>theme: <a href="https://github.com/shanep/shanep-class">shanep-class</a></li>       
             
