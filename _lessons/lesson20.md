@@ -48,9 +48,6 @@ interface (CLI) for more complex functions.
 4. Under **Basic information**, do the following:
    - For **Function name**, use your student email, for example **student01-u-boisestate-edu**
    - For **Runtime**, confirm that **Node.js 16.x** is selected.
-   - Change the default execution role
-     - Select **Use an existing role**
-     - Select **lambda-database-role**
    - Keep all other setting in their default state
 5. Choose **Create function**.
 
@@ -97,102 +94,7 @@ this point, we can add it later if necessary.
 
 ![Test event]({% link assets/images/labs/lesson20-auth-type.png %})
 
-## Task 4 - Developing with Lambda
-
-While a lot of what we need to do can be accomplished with the web interface
-that AWS provides we will still need to install the AWS CLI so we can push and
-manage code from the command line. Luckily AWS provides detailed instructions
-for all the major operating systems. If you can't get AWS installed and working
-on your personal machine you will need to do your work in a [Linux virtual
-machine](https://docs.google.com/document/d/1qmOEfgJ0d_-mVFotFbRgInRVfINe98rU-Z6TJiiTMck/edit?usp=sharing).
-You are not required to use a Linux VM it is only provided if you can't
-configure your own machine.
-
-1. [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-2. [Install AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-3. [AWS Toolkit for VSCode](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
-4. [Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
-5. [Generate Your Access Key](https://us-east-1.console.aws.amazon.com/iam/home#/users/student01)
-
-![AWS access key]({% link /assets/images/labs/lesson20-key.png %})
-
-Use the us-west-2 (Oregon) for the default region.
-
-```bash
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-west-2
-Default output format [None]: json
-```
-
-### Update the function
-
-You are now going to update the function that you created in the first task from
-the command line. When you start using other AWS services you will need to
-upload **lots** of files and dependencies. This is not something that you want
-to do by hand as the GUI doesn't provide a good way to mass upload files.
-
-1. Open the `update-lambda.sh` shell script in the starter code. It is located
-   in the lambda folder.
-2. Replace `PUT_THE_FUNCTION_NAME_HERE` with your function name that you create
-   in the previous task.
-3. Run the `update-lambda.sh` function.
-4. Open the [Functions
-   page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda
-   console and confirm that your function was update. Make sure and switch to
-   to Oregon region. ![AWS region]({% link /assets/images/labs/lesson20-region.png %})
-
-### Test the function
-
-You can test  your Lambda function using the sample event data provided in the
-console. This can allow you to quickly verify that everything is working before
-you proceed any further.
-
-1. After selecting your function, choose the **Test** tab.
-2. In the **Configure test event** section, choose **Create new event**.
-3. Give your event a name in the **Even name** field. This can be whatever you
-   want.
-4. Update the Event JSON to match what is shown below.
-5. Save your test event
-
-```json
-{
-  "requestContext": {
-    "http": {
-      "method": "GET",
-      "path": "/",
-      "protocol": "HTTP/1.1",
-      "sourceIp": "1.2.3.4",
-      "userAgent": "testing"
-    },
-    "requestId": "asdf",
-    "routeKey": "$default",
-    "stage": "$default",
-    "time": "09/Oct/2022:17:29:58 +0000",
-    "timeEpoch": 1665336598126
-  },
-  "isBase64Encoded": false
-}
-```
-
-![Test event]({% link assets/images/labs/lesson20-test.png %})
-
-1. Choose **Test**. Each user can create up to 10 test events per function.
-   Those test events are not available to other users. Lambda runs your function
-   on your behalf. The function handler receives and then processes the sample
-   event.
-2. Upon successful completion, view the results in the console.
-
-![Test event]({% link assets/images/labs/lesson20-test-results.png %})
-
-### Errors
-
-If you see the output below it is because you didn't update the function name
-as required in the `update-lambda.sh` file.
-
->An error occurred (ResourceNotFoundException) when calling the UpdateFunctionCode operation: Function not found: arn:aws:lambda:us-west-2:064794820934:function:PUT_THE_FUNCTION_NAME_HERE
-
-## Task 5 - Invoke Function from your localhost
+## Task 4 - Invoke Function from your localhost
 
 We now have a function that we can invoke from our local host! In your starter
 code in the client directory there is an `index.html` file. Replace the
@@ -225,13 +127,13 @@ again.
 4. In the **Delete function** dialog box, choose **Delete**.
 5. Got back to step one and try again 😊
 
-## Task 6 -  Add Files (5pts)
+## Task 5 -  Add Files (5pts)
 
 For this lab you need to check in the completed index.html file that you created
 that has the AWS lambda function URL and all the other files that you updated
 when configuring your code.
 
-## Task 7 - Flipgrid (35pts)
+## Task 6 - Flipgrid (35pts)
 
 Most of this lab was just configuring everything, so the majority of your grade
 will be you showing off everything working in a video. Once you have everything
@@ -245,7 +147,7 @@ You need to demo the following:
 - Show your completed Lambda function on AWS
 - Show your simple web page that invokes the function
 
-## Task 8 - Complete the Retrospective (10pts)
+## Task 7 - Complete the Retrospective (10pts)
 
 Once you have completed all the tasks open the file **Retrospective.md** and
 complete each section with a TODO comment.
