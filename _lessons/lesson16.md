@@ -36,6 +36,7 @@ thousands of them out there so be careful about what you select to help guide
 you. Both examples below are for backend projects. Your project template will
 need to be for the frontend, meaning it will run in the browser.
 
+- [Typescript Hello World](https://github.com/shanep/typescript-hello)
 - [Typescript github action](https://github.com/actions/typescript-action)
 - [Node Typescript Boilerplate](https://github.com/jsynowiec/node-typescript-boilerplate)
 
