@@ -96,9 +96,48 @@ this point, we can add it later if necessary.
 
 ## Task 4 - Invoke Function from your localhost
 
-We now have a function that we can invoke from our local host! In your starter
-code in the client directory there is an `index.html` file. Replace the
+We now have a function that we can invoke from our local host! Create an
+`index.html` file in your repository with the contents shown below. Replace the
 **YOUR LAMBDA URL HERE!** with the URL that you create in the previous task.
+Modify your lambda to return the string "Hello GET" as shown in the screenshot
+below.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test AWS Lambda</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Get Information</h1>
+    <p id="lambda-info">
+        <!-- loaded with AJAX -->
+    </p>
+    <button id="load-data">Load Data</button>
+
+    <script>
+        document.getElementById("load-data").onclick = function () {
+            let lambda = document.getElementById("lambda-info");
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", function () {
+                lambda.innerHTML = xhr.response;
+            });
+            xhr.open("GET", "YOUR LAMBDA URL HERE!");
+            xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>
+```
 
 You now should be able to load data from your AWS Lambda function when using
 the live server preview in VSCode. This will NOT work if you just open up the
