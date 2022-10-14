@@ -31,7 +31,7 @@ ASAP!
 
 When you sign in the sign in screen should look similar to what is shown below.
 
-![AWS sign in screen]({% link /assets/images/labs/lesson20.png %})
+![AWS sign in screen]({% link /assets/images/labs/lesson20-sign-in-as.png %})
 
 ## Task 2 - Lambda Console
 
@@ -43,12 +43,12 @@ start off by using the console and then will switch to using the command line
 interface (CLI) for more complex functions.
 
 1. Open the [Functions page](https://console.aws.amazon.com/lambda/home#/functions) of the Lambda console
-2. Switch to the US West (Oregon) data center ![AWS region]({% link /assets/images/labs/lesson20-region.png %})
+2. Make sure the N. Virginia (us-east-1) data center is selected. ![AWS region]({% link /assets/images/labs/lesson20-region.png %})
 3. Choose **Create function**
 4. Under **Basic information**, do the following:
    - For **Function name**, use your student email, for example **student01-u-boisestate-edu**
    - For **Runtime**, confirm that **Node.js 16.x** is selected.
-   - Keep all other setting in their default state
+   - Change the default execution role to **401-lambda-role**
 5. Choose **Create function**.
 
 ![AWS create function]({% link /assets/images/labs/lesson20-create-function.png %})
@@ -56,7 +56,10 @@ interface (CLI) for more complex functions.
 Lambda creates a Node.js function and an execution role that grants the function
 permission to upload logs. The Lambda function assumes the execution role when
 you invoke your function, and uses the execution role to create credentials for
-the AWS SDK and to read data from event sources.
+the AWS SDK and to read data from event sources. You should now be able to see
+your function in the list of functions.
+
+![AWS Functions]({% link /assets/images/labs/lesson20-created-function.png %})
 
 ## Task 3 - Add a Function URL
 
@@ -149,7 +152,7 @@ file in your browser, you **MUST** use the live preview as shown below!
 
 If you can't find what you created look through all the AWS regions to see if
 you maybe used the wrong region. The AWS console defaults to US East (N.
-Virginia) `us-east-1`, make sure and select US West (Oregon).
+Virginia) `us-east-1`, make sure you are in the correct region.
 
 ![AWS region]({% link /assets/images/labs/lesson20-region.png %})
 
