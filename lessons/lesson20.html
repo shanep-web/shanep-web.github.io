@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://shanep-web.github.io/lessons/lesson20.html" />
 <meta property="og:site_name" content="CS401" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-12T18:40:45-05:00" />
+<meta property="article:published_time" content="2022-10-14T10:02:24-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Lab 9 - AWS Lambda" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson20.html"},"url":"https://shanep-web.github.io/lessons/lesson20.html","headline":"Lab 9 - AWS Lambda","@type":"BlogPosting","dateModified":"2022-10-12T18:40:45-05:00","datePublished":"2022-10-12T18:40:45-05:00","description":"Overview","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://shanep-web.github.io/lessons/lesson20.html"},"url":"https://shanep-web.github.io/lessons/lesson20.html","headline":"Lab 9 - AWS Lambda","@type":"BlogPosting","dateModified":"2022-10-14T10:02:24-05:00","datePublished":"2022-10-14T10:02:24-05:00","description":"Overview","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://shanep-web.github.io/feed.xml" title="CS401" /><link rel="stylesheet" href="https://shanep-web.github.io/assets/css/main_new.css" />
 
@@ -117,7 +117,7 @@ ASAP!</p>
 
 <p>When you sign in the sign in screen should look similar to what is shown below.</p>
 
-<p><img src="/assets/images/labs/lesson20.png" alt="AWS sign in screen" /></p>
+<p><img src="/assets/images/labs/lesson20-sign-in-as.png" alt="AWS sign in screen" /></p>
       <h2 id="task-2---lambda-console">
         
         
@@ -136,13 +136,13 @@ interface (CLI) for more complex functions.</p>
 
 <ol>
   <li>Open the <a href="https://console.aws.amazon.com/lambda/home#/functions">Functions page</a> of the Lambda console</li>
-  <li>Switch to the US West (Oregon) data center <img src="/assets/images/labs/lesson20-region.png" alt="AWS region" /></li>
+  <li>Make sure the N. Virginia (us-east-1) data center is selected. <img src="/assets/images/labs/lesson20-region.png" alt="AWS region" /></li>
   <li>Choose <strong>Create function</strong></li>
   <li>Under <strong>Basic information</strong>, do the following:
     <ul>
       <li>For <strong>Function name</strong>, use your student email, for example <strong>student01-u-boisestate-edu</strong></li>
       <li>For <strong>Runtime</strong>, confirm that <strong>Node.js 16.x</strong> is selected.</li>
-      <li>Keep all other setting in their default state</li>
+      <li>Change the default execution role to <strong>401-lambda-role</strong></li>
     </ul>
   </li>
   <li>Choose <strong>Create function</strong>.</li>
@@ -153,7 +153,10 @@ interface (CLI) for more complex functions.</p>
 <p>Lambda creates a Node.js function and an execution role that grants the function
 permission to upload logs. The Lambda function assumes the execution role when
 you invoke your function, and uses the execution role to create credentials for
-the AWS SDK and to read data from event sources.</p>
+the AWS SDK and to read data from event sources. You should now be able to see
+your function in the list of functions.</p>
+
+<p><img src="/assets/images/labs/lesson20-created-function.png" alt="AWS Functions" /></p>
       <h2 id="task-3---add-a-function-url">
         
         
@@ -271,7 +274,7 @@ file in your browser, you <strong>MUST</strong> use the live preview as shown be
 
 <p>If you can’t find what you created look through all the AWS regions to see if
 you maybe used the wrong region. The AWS console defaults to US East (N.
-Virginia) <code class="language-plaintext highlighter-rouge">us-east-1</code>, make sure and select US West (Oregon).</p>
+Virginia) <code class="language-plaintext highlighter-rouge">us-east-1</code>, make sure you are in the correct region.</p>
 
 <p><img src="/assets/images/labs/lesson20-region.png" alt="AWS region" /></p>
 
@@ -396,7 +399,7 @@ complete each section with a TODO comment.</p>
     <div class="contact">
         <ul>
             <li>
-                 2022-10-12 | layout: lab</li>
+                 2022-10-14 | layout: lab</li>
             <li>contact: shanepanter@boisestate.edu</li>
             <li>theme: <a href="https://github.com/shanep/shanep-class">shanep-class</a></li>       
             
