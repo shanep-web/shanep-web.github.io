@@ -16,19 +16,18 @@ For your final project we will create our own custom blogging engine.
 You are going to write a simple blogging engine. Your blog will need to support
 the following features:
 
-- A home page that will display all the current blog entries
-- A page that allows a user to create a new blog entry
-- A page that allows a user to edit an existing blog entry
-- A page method to delete blog posts
-- You will need 4 separate pages (Home, new, edit, delete)
+- Display all the current blog entries
+- Create a new blog entry
+- Edit an existing blog entry
+- Delete blog posts
 - Store your blog entries in a database
 - (optional) Implement authentication
 
 ## Navigation
 
-Each page will have consistent navigation. It will have a be vertical navigation
-bar similar to how the course webpage is setup. This should make it easy for the
-user to know where they are.
+If you have multiple pages each page will have consistent navigation. If it is
+a single page app then make sure that you have a clear and easy way to navigate
+your page.
 
 ## Style
 
@@ -37,7 +36,7 @@ to make our site look fancy!
 
 ## Persistence
 
-You will need to leverage a database to store your entries
+You will need to leverage a database to store your entries.
 
 ## Frameworks
 
