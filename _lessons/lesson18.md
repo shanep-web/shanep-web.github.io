@@ -2,7 +2,7 @@
 title: Lab 8 - Typescript Tutorial
 tag: javascript
 layout: project
-points: 150
+points: 50
 ---
 
 ## Overview

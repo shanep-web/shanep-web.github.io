@@ -2,7 +2,7 @@
 title: Lab 7 - Typescript part 2
 tag: javascript
 layout: project
-points: (10%)
+points: 50
 ---
 
 ## Overview
