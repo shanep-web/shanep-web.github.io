@@ -23,7 +23,7 @@ The department has created an AWS account for you with your BSU student email.
 You don't have to pay any money or sign up with your personal account. You
 should have received an email similar to what you see below with your AWS
 credentials and a link to the [sign in
-page](https://bsucompsci.signin.aws.amazon.com/console). If you encounter any
+page](https://shanepanter.signin.aws.amazon.com/console). If you encounter any
 issues with logging in with your student email please email your instructor
 ASAP!
 
