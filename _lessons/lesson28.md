@@ -17,5 +17,5 @@ You need to demo the following:
 
 - Show your completed Project
 - Walk through your Front end code and explain your design
-- Walk through your AWS code and explain your design
+- Walk through your code and explain your design
 - Show of any cool features that you developed 😊
