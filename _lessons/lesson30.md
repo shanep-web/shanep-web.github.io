@@ -2,6 +2,7 @@
 title: Make up Lab (optional)
 tag: final
 layout: lab
+points: 50
 ---
 
 ## Overview
@@ -13,3 +14,5 @@ this bonus lab for something that you didn't turn in or something that you just 
 
 If you have crushed every lab up to this point then consider this a free day, there is nothing for
 you to do except study for the final exam!
+
+This makeup lab is worth 50 points.
